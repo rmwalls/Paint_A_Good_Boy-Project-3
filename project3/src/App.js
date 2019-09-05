@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Navbar"
-import Discover from '../../../UNCCCLT201904FSF2/20-react/01-Activities/06-Stu_PupsterApp/reactpractice/src/pages/Discover';
 
 function App() {
   return (
