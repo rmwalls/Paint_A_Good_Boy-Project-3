@@ -11,11 +11,22 @@ function Home() {
             <Container>
               <Row>
                 <Col size="md-6">
-                  <h1 className="display-1 text-white">Give Them </h1>
+                  <h1 className="display-1 text-white">Give Them</h1>
+                  <h1 className="display-1 text-white">The Attention They</h1>
+                  <h1 className="display-1 text-white">Deserve</h1>
+                </Col>
+                <Col size="md-6">
+                  <button className="btn btn-primary">Set An Appointment Today</button>
                 </Col>
               </Row>
             </Container>
           </Hero>
+          <Container>
+            <Row>
+              <Col size="md-12">
+              </Col>
+            </Row>
+          </Container>
         </>
     )
 }
