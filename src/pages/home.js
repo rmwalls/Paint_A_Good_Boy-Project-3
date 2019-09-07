@@ -7,7 +7,7 @@ import Hero from "../components/Hero";
 function Home() {
     return (
         <>
-          <Hero backgroundImage="https://data.1freewallpapers.com/download/autumn-animals-leaves-grass-dogs-puppies-adventure-golden-retriever-fallen-high-quality.jpg">
+          <Hero backgroundImage="https://data.1freewallpapers.com/download/autumn-animals-leaves-grass-dogs-puppies-adventure-golden-retriever-fallen-high-quality.jpg" alt="main image">
           
           </Hero>
         </>
