@@ -23,7 +23,7 @@ function Navbar() {
                     <a className="nav-link text-light" href="#">Pricing</a>
                 </li>
                 <li className="nav-item" style={{width: "150px"}}>
-                    <a className="nav-link text-light" href="#">Disabled</a>
+                    <a className="nav-link text-light" href="#">Login</a>
                 </li>
                 </ul>
             </div>
