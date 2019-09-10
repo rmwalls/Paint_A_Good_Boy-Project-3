@@ -16,14 +16,18 @@ function Home() {
                   <h1 className="display-1 text-white">Deserve</h1>
                 </Col>
                 <Col size="md-6">
-                  <button className="btn btn-primary">Set An Appointment Today</button>
+                  <button className="btn btn-info">Set An Appointment Today</button>
                 </Col>
               </Row>
             </Container>
           </Hero>
+          <br></br>
           <Container>
             <Row>
               <Col size="md-12">
+                <h1 className="display-3 text-dark text-center">To Paint A Good Boy</h1>
+                <h1 className="bg-dark text-light text-center">To Paint A Good Boy</h1>
+
               </Col>
             </Row>
           </Container>
