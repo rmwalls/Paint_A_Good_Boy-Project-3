@@ -23,15 +23,15 @@ function Home() {
             </Container>
           </Hero>
           <br></br>
-          <Container>
+          <Container className="under-splash">
             <Row>
               <Col size="md-12">
-                <h1 className="display-3 text-dark text-center">To Paint A Good Boy</h1>
-                <h1 className="bg-dark text-light text-center">To Paint A Good Boy</h1>
-                <ImageGallery />
+                <h1 className="display-2 text-dark text-center">To Paint A Good Boy</h1>
+                <h1 className=" text-dark text-center">Meet Our Artists</h1>
               </Col>
             </Row>
           </Container>
+          <ImageGallery />
         </>
     )
 }

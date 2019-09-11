@@ -18,6 +18,9 @@ function ImageGallery() {
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <img src="https://via.placeholder.com/150" alt="First Slide"></img>
+                    <img src="https://via.placeholder.com/150" alt="Second Slide"></img>
+                    <img src="https://via.placeholder.com/150" alt="Second Slide"></img>
+                    <img src="https://via.placeholder.com/150" alt="Second Slide"></img>
                 </div>
                 <div className="carousel-item">
                     <img src="https://via.placeholder.com/150" alt="Second Slide"></img>
