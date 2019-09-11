@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
-import ArtistCard from "../components/ArtistCard";
+import ImageGallery from "../components/ImageGallery";
 
 function Home() {
     return (
@@ -28,7 +28,7 @@ function Home() {
               <Col size="md-12">
                 <h1 className="display-3 text-dark text-center">To Paint A Good Boy</h1>
                 <h1 className="bg-dark text-light text-center">To Paint A Good Boy</h1>
-
+                <ImageGallery />
               </Col>
             </Row>
           </Container>
