@@ -15,14 +15,15 @@ function Home() {
               <Row>
                 <Col size="md-6">
                   <div className="splash-text my-5">
-                    <h1 className="display-1 text-white">Give Them</h1>
-                    <h1 className="display-1 text-white">The Attention They</h1>
-                    <h1 className="display-1 text-white">Deserve</h1>
+                    <h1 className="display-1 text-white text-left">Give Them</h1>
+                    <h1 className="display-1 text-white text-left">The Attention</h1>
+                    <h1 className="display-1 text-white text-left">They</h1>
+                    <h1 className="display-1 text-white text-left">Deserve</h1>
                   </div>
                 </Col>
-                <Col className="col-flex-1" size="md-6">
-                  <button className="btn btn-lg btn-info">Set An Appointment Today</button>
-                </Col>
+                <div className="col-md-6 d-flex my-5">
+                  <button className="btn btn-block btn-lg btn-info">Set An Appointment Today</button>
+                </div>
               </Row>
             </Container>
           </Hero>
