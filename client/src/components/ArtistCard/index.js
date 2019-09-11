@@ -3,7 +3,7 @@ import "./style.css";
 
 function ArtistCard() {
     return (
-        <a href="https://placeholder.com"><img src="https://via.placeholder.com/150" /></a>
+        <a className="mx-3" href="https://placeholder.com"><img src="https://via.placeholder.com/150" /></a>
     )
 }
 
