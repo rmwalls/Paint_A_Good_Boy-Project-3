@@ -19,7 +19,7 @@ const UserSchema = new Schema({
     trim: true,
     required: "Password is Required",
     validate: [
-      function(input) {
+      function (input) {
         return input.length >= 6;
       },
       "Password should be longer."
@@ -33,6 +33,9 @@ const UserSchema = new Schema({
   userCreated: {
     type: Date,
     default: Date.now
+  },
+  appointments: {
+    type: Date
   }
 });
 
