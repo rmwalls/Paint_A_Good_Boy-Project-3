@@ -3,9 +3,12 @@ import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
-import Cal from "../components/Cal";
+import BigTile from "../components/BigTile";
+import BigText from "../components/BigText";
+// import Cal from "../components/Cal";
 import ImageGallery from "../components/ImageGallery";
 import "./Home.css"
+import CatImage from "../cat-image.jpg";
 
 function Home() {
     return (
@@ -37,7 +40,24 @@ function Home() {
             </Row>
           </Container>
           <ImageGallery />
-          <Cal />
+          <Container className="no-padding">
+            <Row>
+              <Col size="md-6">
+                <BigTile image={CatImage} />
+              </Col>
+              <Col size="md-6">
+                <BigText />
+              </Col>  
+            </Row>
+            <Row>
+              <Col size="md-6">
+                <BigText />
+              </Col>
+              <Col size="md-6">
+                <BigTile image="https://naturallivingfamily.com/wp-content/uploads/2018/01/How-to-Use-Essential-Oils-for-Dogs-and-Other-Pets.jpg" />
+              </Col>  
+            </Row>
+          </Container>
         </>
     )
 }
