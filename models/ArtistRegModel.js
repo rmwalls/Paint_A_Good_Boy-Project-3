@@ -3,23 +3,18 @@ const mongoose = require("mongoose");
 // Save a reference to the Schema constructor
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
-  fullname: {
+// Using the Schema constructor, create a new UserSchema object
+const ArtistSchema = new Schema({
+  name: {
     type: String,
-    trim: true,
-    required: "Full Name is Required"
-  },
-  username: {
-    type: String,
-    trim: true,
-    required: "Username is Required"
+    required: true,
   },
   password: {
     type: String,
     trim: true,
     required: "Password is Required",
     validate: [
-      function (input) {
+      function(input) {
         return input.length >= 6;
       },
       "Password should be longer."
@@ -33,14 +28,11 @@ const UserSchema = new Schema({
   userCreated: {
     type: Date,
     default: Date.now
-  },
-  appointments: {
-    type: Date
   }
 });
 
 // This creates our model from the above schema, using mongoose's model method
 var User = mongoose.model("User", UserSchema);
 
-// Export the User model
-module.exports = User;
+// Export the Artist model
+module.exports = Artist;

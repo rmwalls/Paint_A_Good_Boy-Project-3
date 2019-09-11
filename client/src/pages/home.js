@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
+import Cal from "../components/Cal";
 import ImageGallery from "../components/ImageGallery";
 import "./Home.css"
 
@@ -35,6 +36,7 @@ function Home() {
             </Row>
           </Container>
           <ImageGallery />
+          <Cal />
         </>
     )
 }
