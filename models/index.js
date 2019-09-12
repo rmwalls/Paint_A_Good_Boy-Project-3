@@ -1,5 +1,5 @@
-// Exporting an object containing both of our models
+// Exporting an object containing our models
 module.exports = {
-    ArtistRegModel: require("./ArtistRegModel"),
-    ArtistRegModel: require("./UserRegModel")
-  };
+  Artist: require('./Artist'),
+  User: require('./User')
+};
