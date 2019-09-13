@@ -16,4 +16,17 @@ router.get('/', (req, res) => {
     });
 });
 
+// @route    POST api/artists
+// @desc     Create a new artist
+// @access   Public
+router.post('/', (req, res) => {
+  Artist.create(req.body)
+    .then(artist => {
+      res.json(artist);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
 module.exports = router;
