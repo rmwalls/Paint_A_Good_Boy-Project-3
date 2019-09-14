@@ -21,9 +21,9 @@ if (process.env.NODE_ENV === 'production') {
 app.get('/', (req, res) => res.send('Project 3 API Running'));
 
 // Routes
-app.use('/api/artists', require('./routes/api/artists.js'));
-app.use('/api/book', require('./routes/api/book'));
-app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/artists', require('./routes/API/artists.js'));
+app.use('/api/book', require('./routes/API/book'));
+app.use('/api/auth', require('./routes/API/auth'));
 
 // app.use(routes);
 
