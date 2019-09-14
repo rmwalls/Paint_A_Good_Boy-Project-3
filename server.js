@@ -4,12 +4,30 @@ const path = require('path');
 // const routes = require('./routes');
 require('dotenv').config();
 
+var book = require('./routes/api/book');
+var auth = require('./routes/api/auth');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
+app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
+
+// API Test Route
+app.get('/', (req, res) => res.send('Project 3 API Running'));
+
+// Routes
+app.use('/api/artists', require('./routes/api/artists.js'));
+app.use('/api/book', book);
+app.use('/api/auth', auth);
+
+// app.use(routes);
 
 // Connect to the Mongo DB
 const url = process.env.MONGODB_URI || 'mongodb://localhost/petapp';
