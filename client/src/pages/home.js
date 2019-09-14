@@ -42,20 +42,20 @@ function Home() {
           <ImageGallery />
           <Container className="no-padding">
             <Row>
-              <Col size="md-6">
+              <div className="col-md-6 d-flex">
                 <BigTile image={CatImage} />
-              </Col>
-              <Col size="md-6">
+              </div>
+              <div className="col-md-6 d-flex">
                 <BigText />
-              </Col>  
+              </div>  
             </Row>
             <Row>
-              <Col size="md-6">
+              <div className="col-md-6 d-flex">
                 <BigText />
-              </Col>
-              <Col size="md-6">
+              </div>
+              <div className="col-md-6 d-flex">
                 <BigTile image="https://naturallivingfamily.com/wp-content/uploads/2018/01/How-to-Use-Essential-Oils-for-Dogs-and-Other-Pets.jpg" />
-              </Col>  
+              </div>  
             </Row>
           </Container>
         </>
