@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'production') {
 app.get('/', (req, res) => res.send('Project 3 API Running'));
 
 // Routes
-app.use('/api/artists', require('./routes/API/artists.js'));
+app.use('/api/artists', require('./routes/API/artists'));
 app.use('/api/book', require('./routes/API/book'));
 app.use('/api/auth', require('./routes/API/auth'));
 
@@ -42,12 +42,6 @@ db.once('open', _ => {
 db.on('error', err => {
   console.error('connection error:', err);
 });
-
-// Routes
-app.use('/api/artists', require('./routes/api/artists.js'));
-app.use('/api/users', require('./routes/api/users.js'));
-
-// app.use(routes);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
