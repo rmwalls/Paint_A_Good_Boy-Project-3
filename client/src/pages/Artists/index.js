@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ArtistCardFull from "../../components/ArtistCardFull";
 import axios from 'axios';
 
 class Artists extends Component {
@@ -23,7 +24,14 @@ class Artists extends Component {
     return (
       <>
         <h1>Artist List</h1>;
-        <div>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <ArtistCardFull></ArtistCardFull>
+            </div>
+          </div>
+        </div>
+        {/* <div>
           {this.state.artists.length ? (
             <ul>
               {this.state.artists.map(artist => (
@@ -37,7 +45,7 @@ class Artists extends Component {
           ) : (
             <h3>No Results to Display</h3>
           )}
-        </div>
+        </div> */}
       </>
     );
   }
