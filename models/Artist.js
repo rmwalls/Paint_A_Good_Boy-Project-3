@@ -29,6 +29,9 @@ const ArtistSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  specialty: {
+    type: String
+  },
   appointments: {
     type: Date
   }
