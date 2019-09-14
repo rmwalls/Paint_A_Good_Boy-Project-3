@@ -6,6 +6,9 @@ import Col from '../../components/Col';
 import Cal from '../../components/Cal';
 import ImageGallery from '../../components/ImageGallery';
 import SelectBox from '../../components/SelectBox';
+import BigTile from "../../components/BigTile";
+import BigText from "../../components/BigText";
+import CatImage from "../../cat-image.jpg";
 import './Home.css';
 
 function Home() {
@@ -16,20 +19,15 @@ function Home() {
           <Row>
             <Col size='md-6'>
               <div className='splash-text my-5'>
-                <h1 className='display-1 text-white'>Give Them</h1>
-                <h1 className='display-1 text-white'>The Attention They</h1>
-                <h1 className='display-1 text-white'>Deserve</h1>
-                <SelectBox
-                  width={400}
-                  name='artist-specialty'
-                  items={[
-                    { value: 'Photograph', id: 1 },
-                    { value: 'Painting', id: 2 },
-                    { value: 'Video', id: 3 }
-                  ]}
-                />
-              </div>
+                <h1 className='display-1 text-white text-left'>Give Them</h1>
+                <h1 className='display-1 text-white text-left'>The Attention</h1>
+                <h1 className='display-1 text-white text-left'>They</h1>
+                <h1 className='display-1 text-white text-left'>Deserve</h1>
+              </div>  
             </Col>
+                <div className="col-md-6 d-flex my-5">
+                  <button className="btn btn-block btn-lg btn-info">Set An Appointment Today</button>
+                </div>
           </Row>
         </Container>
       </Hero>
@@ -37,15 +35,30 @@ function Home() {
       <Container className='under-splash'>
         <Row>
           <Col size='md-12'>
-            <h1 className='display-2 text-dark text-center'>
-              Paint A Good Boy
-            </h1>
+            <h1 className='display-2 text-dark text-center'>Paint A Good Boy</h1>
             <h1 className=' text-dark text-center'>Meet Our Artists</h1>
           </Col>
         </Row>
       </Container>
       <ImageGallery />
-      <Cal />
+      <Container className="no-padding">
+            <Row>
+              <div className="col-md-6 d-flex">
+                <BigTile image={CatImage} />
+              </div>
+              <div className="col-md-6 d-flex">
+                <BigText />
+              </div>  
+            </Row>
+            <Row>
+              <div className="col-md-6 d-flex">
+                <BigText />
+              </div>
+              <div className="col-md-6 d-flex">
+                <BigTile image="https://naturallivingfamily.com/wp-content/uploads/2018/01/How-to-Use-Essential-Oils-for-Dogs-and-Other-Pets.jpg" />
+              </div>  
+            </Row>
+      </Container>
     </>
   );
 }

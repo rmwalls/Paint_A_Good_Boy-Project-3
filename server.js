@@ -1,11 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const logger = require('morgan');
 // const routes = require('./routes');
 require('dotenv').config();
-
-var book = require('./routes/api/book');
-var auth = require('./routes/api/auth');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -24,8 +22,8 @@ app.get('/', (req, res) => res.send('Project 3 API Running'));
 
 // Routes
 app.use('/api/artists', require('./routes/api/artists.js'));
-app.use('/api/book', book);
-app.use('/api/auth', auth);
+app.use('/api/book', require('./routes/api/book'));
+app.use('/api/auth', require('./routes/api/auth'));
 
 // app.use(routes);
 
