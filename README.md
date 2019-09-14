@@ -5,8 +5,8 @@ Deployed to Heroku --> <https://nameless-reef-65979.herokuapp.com/>
 
 ## Project Team
 
-*Lucas Martin
-*Mike McGuire
+* Lucas Martin
+* Mike McGuire
 *Steve Rogers
 *Robbi Walls
 
