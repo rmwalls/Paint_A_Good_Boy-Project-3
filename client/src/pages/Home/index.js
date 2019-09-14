@@ -8,7 +8,7 @@ import ImageGallery from '../../components/ImageGallery';
 import SelectBox from '../../components/SelectBox';
 import BigTile from "../../components/BigTile";
 import BigText from "../../components/BigText";
-import CatImage from "../cat-image.jpg";
+import CatImage from "../../cat-image.jpg";
 import './Home.css';
 
 function Home() {
