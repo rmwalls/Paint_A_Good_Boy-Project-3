@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "image": "../public/img/alexThumb.jpg",
+        "clicked": false
+    },
+    {
+        "id": 2,
+        "image": "../public/img/arieleThumb.jpg",
+        "clicked": false
+    },
+    {
+        "id": 3,
+        "image": "../public/img/davinciThumb.jpg",
+        "clicked": false
+    },
+    {
+        "id": 4,
+        "image": "../public/img/ginaThumb.jpg",
+        "clicked": false
+    },
+    {
+        "id": 5,
+        "image": "../public/img/michelangeloThumb.jpg",
+        "clicked": false
+    },
+    {
+        "id": 6,
+        "image": "../public/img/ajaThumb.jpg",
+        "clicked": false
+    },
+    {
+        "id": 7,
+        "image": "../public/img/joyThumb.jpg",
+        "clicked": false
+    },
+    {
+        "id": 8,
+        "image": "../public/img/janiceThumb.jpg",
+        "clicked": false
+    }
+]

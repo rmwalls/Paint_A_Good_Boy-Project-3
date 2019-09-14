@@ -11,6 +11,7 @@ function Navbar() {
         style={{ width: '45px', height: '50px' }}
         className='navbar-brand'
         href='#'
+        alt=""
       ></img>
       <Link to='/' className='navbar-brand text-light'>
         Paint A Good Boy
