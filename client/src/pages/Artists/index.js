@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ArtistCardFull from "../../components/ArtistCardFull";
+import ArtistCardFull from '../../components/ArtistCardFull';
 import axios from 'axios';
 
 class Artists extends Component {
@@ -8,15 +8,15 @@ class Artists extends Component {
   };
 
   componentDidMount() {
+    console.log('did this work?', this.props.career);
     this.loadArtists();
   }
 
   loadArtists = () => {
+    const career = this.props.career.toLowerCase();
     axios
-      .get('/api/artists', (req, res) => {
-        console.log(res.data);
-      })
-      .then(res => this.setState({ artists: res.data }))
+      .get(`/api/artists/${career}`)
+      .then(res => console.log(res) || this.setState({ artists: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -24,14 +24,14 @@ class Artists extends Component {
     return (
       <>
         <h1>Artist List</h1>;
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
+        <div className='container'>
+          <div className='row'>
+            <div className='col-md-12'>
               <ArtistCardFull></ArtistCardFull>
             </div>
           </div>
         </div>
-        {/* <div>
+        <div>
           {this.state.artists.length ? (
             <ul>
               {this.state.artists.map(artist => (
@@ -45,7 +45,7 @@ class Artists extends Component {
           ) : (
             <h3>No Results to Display</h3>
           )}
-        </div> */}
+        </div>
       </>
     );
   }

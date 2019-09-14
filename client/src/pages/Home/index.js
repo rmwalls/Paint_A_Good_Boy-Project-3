@@ -8,7 +8,11 @@ import ImageGallery from '../../components/ImageGallery';
 import SelectBox from '../../components/SelectBox';
 import './Home.css';
 
-function Home() {
+function Home(props) {
+  const onCareerChange = career => {
+    props.setCareer(career.value);
+  };
+
   return (
     <>
       <Hero backgroundImage='https://data.1freewallpapers.com/download/autumn-animals-leaves-grass-dogs-puppies-adventure-golden-retriever-fallen-high-quality.jpg'>
@@ -27,6 +31,7 @@ function Home() {
                     { value: 'Painting', id: 2 },
                     { value: 'Video', id: 3 }
                   ]}
+                  onChange={onCareerChange}
                 />
               </div>
             </Col>

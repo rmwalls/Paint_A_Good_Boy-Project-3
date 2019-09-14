@@ -29,7 +29,7 @@ app.use('/api/auth', require('./routes/API/auth'));
 
 // Connect to the Mongo DB
 const url = process.env.MONGODB_URI || 'mongodb://localhost/petapp';
-mongoose.connect(url, {
+mongoose.connect('mongodb://localhost/petapp', {
   useNewUrlParser: true,
   useCreateIndex: true
 });
