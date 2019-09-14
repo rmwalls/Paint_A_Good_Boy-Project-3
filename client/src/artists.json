@@ -1,42 +1,42 @@
 [
     {
         "id": 1,
-        "image": "../public/img/alexThumb.jpg",
+        "image": "img/alexThumb.jpg",
         "clicked": false
     },
     {
         "id": 2,
-        "image": "../public/img/arieleThumb.jpg",
+        "image": "img/arieleThumb.jpg",
         "clicked": false
     },
     {
         "id": 3,
-        "image": "../public/img/davinciThumb.jpg",
+        "image": "img/davinciThumb.jpg",
         "clicked": false
     },
     {
         "id": 4,
-        "image": "../public/img/ginaThumb.jpg",
+        "image": "img/ginaThumb.jpg",
         "clicked": false
     },
     {
         "id": 5,
-        "image": "../public/img/michelangeloThumb.jpg",
+        "image": "img/michelangeloThumb.jpg",
         "clicked": false
     },
     {
         "id": 6,
-        "image": "../public/img/ajaThumb.jpg",
+        "image": "img/ajaThumb.jpg",
         "clicked": false
     },
     {
         "id": 7,
-        "image": "../public/img/joyThumb.jpg",
+        "image": "img/joyThumb.jpg",
         "clicked": false
     },
     {
         "id": 8,
-        "image": "../public/img/janiceThumb.jpg",
+        "image": "img/janiceThumb.jpg",
         "clicked": false
     }
 ]
