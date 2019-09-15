@@ -48,8 +48,6 @@ if (process.env.NODE_ENV === 'production') {
 
 // Routes
 app.use('/api/artists', require('./routes/API/artists.js'));
-app.use('/api/book', require('./routes/API/book'));
-app.use('/api/artists', require('./routes/API/artists.js'));
 app.use('/api/users', require('./routes/API/users.js'));
 
 // Start the API server
