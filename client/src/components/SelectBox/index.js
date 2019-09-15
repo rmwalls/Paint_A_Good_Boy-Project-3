@@ -15,11 +15,14 @@ class SelectBox extends React.Component {
     }));
   };
 
-  selectItem = item =>
+  selectItem = item => {
     this.setState({
       selectedItem: item,
       showItems: false
     });
+
+    this.props.onChange(item);
+  };
 
   render() {
     return (

@@ -1,0 +1,11 @@
+.grid-container {
+    display: grid;
+    padding: 10px;
+    justify-content: center;
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .grid-item {
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+  }
