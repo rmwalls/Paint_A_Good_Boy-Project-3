@@ -34,10 +34,16 @@ const ArtistSchema = new Schema({
   },
   appointments: {
     type: Date
+  },
+  artistPhoto: {
+    type: String
+  },
+  bioInfo: {
+    type: String
   }
 });
 
-// This creates our model from the above schema, using mongoose's model method
+// This creates the model from the above schema, using mongoose's model method
 var Artist = mongoose.model('Artist', ArtistSchema);
 
 // Export the Artist model

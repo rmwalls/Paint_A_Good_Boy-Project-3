@@ -6,7 +6,7 @@ function BigText() {
         <>
             <div className="card">
                 <div className="card-body">
-                    <h1 className="display-1 text-black text-left">Lorem ipsum dolor</h1>
+                    <h1 className="display-1 text-black text-left">Lorem namaste aloha</h1>
                 </div>
             </div>
         </>
