@@ -1,42 +1,42 @@
 [
-    {
-        "id": 1,
-        "image": "img/alexThumb.jpg",
-        "clicked": false
-    },
-    {
-        "id": 2,
-        "image": "img/arieleThumb.jpg",
-        "clicked": false
-    },
-    {
-        "id": 3,
-        "image": "img/davinciThumb.jpg",
-        "clicked": false
-    },
-    {
-        "id": 4,
-        "image": "img/ginaThumb.jpg",
-        "clicked": false
-    },
-    {
-        "id": 5,
-        "image": "img/michelangeloThumb.jpg",
-        "clicked": false
-    },
-    {
-        "id": 6,
-        "image": "img/ajaThumb.jpg",
-        "clicked": false
-    },
-    {
-        "id": 7,
-        "image": "img/joyThumb.jpg",
-        "clicked": false
-    },
-    {
-        "id": 8,
-        "image": "img/janiceThumb.jpg",
-        "clicked": false
-    }
+  {
+    "id": 1,
+    "image": "img/alexThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 2,
+    "image": "img/arieleThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 3,
+    "image": "img/davinciThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 4,
+    "image": "img/ginaThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 5,
+    "image": "img/michelangeloThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 6,
+    "image": "img/ajaThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 7,
+    "image": "img/joyThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 8,
+    "image": "img/janicethumb.jpg",
+    "clicked": false
+  }
 ]
