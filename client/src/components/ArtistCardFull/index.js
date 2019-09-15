@@ -1,14 +1,14 @@
 import React from 'react';
 import './style.css';
 
-function ArtistCardFull() {
+function ArtistCardFull(props) {
   return (
     <div className='card mb-3'>
       <div className='row no-gutters'>
         <div className='col-md-2'>
           <img
             src='https://via.placeholder.com/150'
-            class='card-img'
+            className='card-img'
             alt='...'
             height='100%'
             width='100%'
@@ -16,7 +16,7 @@ function ArtistCardFull() {
         </div>
         <div className='col-md-10'>
           <div className='card-body'>
-            <h5 className='card-title'>Artist Name</h5>
+            <h5 className='card-title'>{props.name}</h5>
             <p className='card-text'>
               Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt
               tortor aliquam. Ac turpis egestas sed tempus urna et pharetra.

@@ -1,78 +1,51 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import './Login.css';
 
-const Register = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    password2: ''
-  });
+class Create extends Component {
 
-  const { name, email, password, password2 } = formData;
+  constructor() {
+    super();
+    this.state = {
+      username: '',
+      password: ''
+    };
+  }
+  onChange = (e) => {
+    const state = this.state
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+  }
 
-  const onChange = e =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-
-  const onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
-    if (password !== password2) {
-      console.log('Passwords do not match');
-    } else {
-      console.log(formData);
-    }
-  };
 
-  return (
-    <>
-      <h1 className='large text-primary'>Sign Up</h1>
-      <p>
-        <i className='fas fa-user' /> Create Your Account
-      </p>
-      <form className='form' onSubmit={e => onSubmit()}>
-        <div className='form-group'>
-          <input
-            type='text'
-            placeholder='Name'
-            name='name'
-            value={name}
-            onChange={e => onChange(e)}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <input
-            type='text'
-            placeholder='Email'
-            name='email'
-            value={email}
-            onChange={e => onChange(e)}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <input
-            type='password'
-            placeholder='Password'
-            name='password'
-            minLength='6'
-            value={password}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <div className='form-group'>
-          <input
-            type='password'
-            placeholder='Confirm Password'
-            name='password2'
-            minLength='6'
-            value={password2}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <input type='submit' className='btn btn-primary' value='Register' />
-      </form>
-    </>
-  );
-};
+    const { username, password } = this.state;
 
-export default Register;
+    axios.post('/api/users/register', { username, password })
+      .then((result) => {
+        localStorage.setItem('jwtToken', result.data.token);
+        this.props.history.push("/")
+      });
+  }
+
+  render() {
+    const { username, password } = this.state;
+    return (
+      <div class="container">
+        <form class="form-signin" onSubmit={this.onSubmit}>
+          <h2 class="form-signin-heading">Register</h2>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" class="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        </form>
+      </div>
+    );
+  }
+}
+
+export default Create;

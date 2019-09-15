@@ -29,7 +29,7 @@ const ArtistSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  specialty: {
+  career: {
     type: String
   },
   appointments: {

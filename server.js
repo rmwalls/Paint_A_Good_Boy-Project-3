@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const logger = require('morgan');
-// const routes = require('./routes');
 require('dotenv').config();
 
 const app = express();
@@ -17,24 +16,16 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
-// API Test Route
-app.get('/', (req, res) => res.send('Project 3 API Running'));
-
-// Routes
-app.use('/api/artists', require('./routes/API/artists'));
-app.use('/api/book', require('./routes/API/book'));
-app.use('/api/auth', require('./routes/API/auth'));
-
-// app.use(routes);
-
 // Connect to the Mongo DB
 const url = process.env.MONGODB_URI || 'mongodb://localhost/petapp';
-mongoose.connect('mongodb://localhost/petapp', {
+console.log('Connecting to db');
+mongoose.connect(url, {
   useNewUrlParser: true,
   useCreateIndex: true
 });
 
 const db = mongoose.connection;
+
 db.once('open', _ => {
   console.log('Database connected:', url);
 });
@@ -42,6 +33,8 @@ db.once('open', _ => {
 db.on('error', err => {
   console.error('connection error:', err);
 });
+
+console.log('Registered event handlers');
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
@@ -52,6 +45,12 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
+
+// Routes
+app.use('/api/artists', require('./routes/API/artists.js'));
+app.use('/api/book', require('./routes/API/book'));
+app.use('/api/artists', require('./routes/API/artists.js'));
+app.use('/api/users', require('./routes/API/users.js'));
 
 // Start the API server
 app.listen(PORT, function() {
