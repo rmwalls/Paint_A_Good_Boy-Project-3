@@ -12,13 +12,9 @@ app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-}
-
 // Connect to the Mongo DB
 const url = process.env.MONGODB_URI || 'mongodb://localhost/petapp';
-console.log("Connecting to db");
+console.log('Connecting to db');
 mongoose.connect(url, {
   useNewUrlParser: true,
   useCreateIndex: true
@@ -34,7 +30,7 @@ db.on('error', err => {
   console.error('connection error:', err);
 });
 
-console.log("Registered event handlers");
+console.log('Registered event handlers');
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
@@ -48,10 +44,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // Routes
 app.use('/api/artists', require('./routes/API/artists.js'));
-app.use('/api/book', require('./routes/API/book'));
-app.use('/api/artists', require('./routes/API/artists.js'));
 app.use('/api/users', require('./routes/API/users.js'));
-
 
 // Start the API server
 app.listen(PORT, function() {

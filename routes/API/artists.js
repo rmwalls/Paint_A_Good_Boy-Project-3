@@ -16,6 +16,20 @@ router.get('/', (req, res) => {
     });
 });
 
+// @route    GET api/artists/career
+// @desc     Get artist info by their profession
+// @access   Public
+router.get('/:career', (req, res) => {
+  console.log('career: ' + req.params.career);
+  Artist.find({ career: req.params.career.toLowerCase() })
+    .then(artist => {
+      res.json(artist);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
 // @route    POST api/artists
 // @desc     Create a new artist
 // @access   Public

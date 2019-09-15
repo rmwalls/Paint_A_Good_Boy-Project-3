@@ -1,22 +1,33 @@
 import React, { Component } from 'react';
-import ArtistCardFull from "../../components/ArtistCardFull";
+import ArtistCardFull from '../../components/ArtistCardFull';
+import SelectBox from '../../components/SelectBox';
 import axios from 'axios';
 
 class Artists extends Component {
   state = {
-    artists: []
+    artists: [],
+    career: ''
   };
 
   componentDidMount() {
-    this.loadArtists();
+    this.loadAllArtists();
   }
 
-  loadArtists = () => {
+  setCareer = career => {
+    this.setState({ career: career }, this.loadArtistsByCareer());
+  };
+
+  loadAllArtists = () => {
     axios
-      .get('/api/artists', (req, res) => {
-        console.log(res.data);
-      })
-      .then(res => this.setState({ artists: res.data }))
+      .get(`/api/artists/`)
+      .then(res => console.log(res) || this.setState({ artists: res.data }))
+      .catch(err => console.log(err));
+  };
+
+  loadArtistsByCareer = () => {
+    axios
+      .get(`/api/artists/${this.state.career.value}`)
+      .then(res => console.log(res) || this.setState({ artists: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -24,28 +35,29 @@ class Artists extends Component {
     return (
       <>
         <h1>Artist List</h1>;
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <ArtistCardFull></ArtistCardFull>
+        <SelectBox
+          width={400}
+          name='artist-specialty'
+          items={[
+            { value: 'Photograph', id: 1 },
+            { value: 'Painting', id: 2 },
+            { value: 'Video', id: 3 }
+          ]}
+          onChange={this.setCareer}
+        />
+        {this.state.artists.length ? (
+          this.state.artists.map(artist => (
+            <div className='container'>
+              <div className='row'>
+                <div className='col-md-12'>
+                  <ArtistCardFull name={artist.name}></ArtistCardFull>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        {/* <div>
-          {this.state.artists.length ? (
-            <ul>
-              {this.state.artists.map(artist => (
-                <li key={artist._id}>
-                  <a href={'/artists/' + artist._id}>
-                    <strong>{artist.name}</strong>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <h3>No Results to Display</h3>
-          )}
-        </div> */}
+          ))
+        ) : (
+          <h3>No Results to Display</h3>
+        )}
       </>
     );
   }
