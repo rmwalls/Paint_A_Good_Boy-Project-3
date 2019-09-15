@@ -8,11 +8,7 @@ function ImageGallery() {
     <div className='bs-example'>
       <div id='myCarousel' className='carousel slide' data-ride='carousel'>
         <ol className='carousel-indicators'>
-          <li
-            data-target='#myCarousel'
-            data-slide-to='0'
-            className='active'
-          ></li>
+          <li data-target='#myCarousel' data-slide-to='0' className='active'></li>
           <li data-target='#myCarousel' data-slide-to='1'></li>
           <li data-target='#myCarousel' data-slide-to='2'></li>
         </ol>
@@ -29,18 +25,10 @@ function ImageGallery() {
           </div>
         </div>
 
-        <a
-          className='carousel-control-prev'
-          href='#myCarousel'
-          data-slide='prev'
-        >
+        <a className='carousel-control-prev' href='#myCarousel' data-slide='prev'>
           <span className='carousel-control-prev-icon'></span>
         </a>
-        <a
-          className='carousel-control-next'
-          href='#myCarousel'
-          data-slide='next'
-        >
+        <a className='carousel-control-next' href='#myCarousel' data-slide='next'>
           <span className='carousel-control-next-icon'></span>
         </a>
       </div>

@@ -3,9 +3,10 @@ import "./style.css";
 
 function BigTile(props) {
     return (
-        <>  <div className="card">
+        <>  
+             <div className="card my-2 bg-dark">
                 <div className="card-body">
-                    <a href="https://placeholder.com"><img src={props.image} width="100%" height="100%" alt="artist images"/></a>
+                    <a href="https://placeholder.com"><img className="rounded" src={props.image} width="100%" height="100%"/></a>
                 </div>
             </div>
         </>
