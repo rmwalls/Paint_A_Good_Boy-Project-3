@@ -34,6 +34,10 @@ class Artists extends Component {
   render() {
     return (
       <>
+      //The br's are to push the content below the navbar
+      <br></br>
+      <br></br>
+      <br></br>
         <h1>Artist List</h1>;
         <SelectBox
           width={400}
