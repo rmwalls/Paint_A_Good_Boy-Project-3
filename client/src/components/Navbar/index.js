@@ -5,7 +5,7 @@ import logo from './logo.png';
 
 function Navbar() {
   return (
-    <nav className='navbar navbar-expand-lg navbar-light bg-dark'>
+    <nav className='navbar fixed-top navbar-expand-lg navbar-light bg-dark '>
       <img
         src={logo}
         style={{ width: '45px', height: '50px' }}

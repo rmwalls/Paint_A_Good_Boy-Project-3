@@ -35,6 +35,10 @@ class Create extends Component {
     const { username, password } = this.state;
     return (
       <div class="container">
+        //The br's are to push the content below the navbar
+        <br></br>
+        <br></br>
+        <br></br>
         <form class="form-signin" onSubmit={this.onSubmit}>
           <h2 class="form-signin-heading">Register</h2>
           <label for="inputEmail" class="sr-only">Email address</label>
