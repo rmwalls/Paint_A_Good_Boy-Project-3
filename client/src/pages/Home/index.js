@@ -13,6 +13,7 @@ import './Home.css';
 function Home() {
   return (
     <>
+    <br></br>
       <Hero backgroundImage='https://data.1freewallpapers.com/download/autumn-animals-leaves-grass-dogs-puppies-adventure-golden-retriever-fallen-high-quality.jpg'>
         <Container>
           <Row>
