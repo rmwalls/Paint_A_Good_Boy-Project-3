@@ -57,6 +57,7 @@ function ImageGallery() {
         <span className='carousel-control-next-icon'></span>
       </a>
     </div>
+  </div>
   );
 }
 
