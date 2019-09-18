@@ -3,11 +3,11 @@ import Hero from '../../components/Hero';
 import Container from '../../components/Container';
 import Row from '../../components/Row';
 import Col from '../../components/Col';
-import Cal from '../../components/Cal';
+//import Cal from '../../components/Cal';
 import ImageGallery from '../../components/ImageGallery';
 import BigTile from '../../components/BigTile';
 import BigText from '../../components/BigText';
-import CatImage from '../../cat-image.jpg';
+import CatImage from '../../kitty.jpg';
 import Footer from '../../components/Footer';
 import './Home.css';
 
@@ -15,7 +15,7 @@ function Home() {
   return (
     <>
     <br></br>
-      <Hero backgroundImage='https://data.1freewallpapers.com/download/autumn-animals-leaves-grass-dogs-puppies-adventure-golden-retriever-fallen-high-quality.jpg'>
+    <Hero backgroundImage='https://data.1freewallpapers.com/download/autumn-animals-leaves-grass-dogs-puppies-adventure-golden-retriever-fallen-high-quality.jpg'>
         <Container>
           <Row>
             <Col size='md-6'>

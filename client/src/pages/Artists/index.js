@@ -35,7 +35,7 @@ class Artists extends Component {
   render() {
     return (
       <>
-      //The br's are to push the content below the navbar
+      {/*The br's are to push the content below the navbar*/}
       <br></br>
       <br></br>
       <br></br>
