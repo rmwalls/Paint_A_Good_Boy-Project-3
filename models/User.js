@@ -8,7 +8,7 @@ const UserSchema = new Schema({
   fullname: {
     type: String,
     trim: true,
-    required: "Full Name is Required"
+    // required: "Full Name is Required"
   },
   username: {
     type: String,
@@ -21,16 +21,21 @@ const UserSchema = new Schema({
     required: "Password is Required",
     validate: [
       function (input) {
-        return input.length >= 6;
+        return input.length >= 3;
       },
       "Password should be longer."
     ]
   },
-  email: {
-    type: String,
-    unique: true,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
-  },
+
+  // Email is not needed here since the username is the same as 
+  // the email address in our database
+
+  // email: {
+  //   type: String,
+  //   unique: true,
+  //   match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+  // },
+  
   userCreated: {
     type: Date,
     default: Date.now
