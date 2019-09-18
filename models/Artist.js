@@ -25,21 +25,15 @@ const ArtistSchema = new Schema({
       'Password should be longer.'
     ]
   },
+  isArtist: Boolean,
+  career: String,
+  media: [String],
+  artistPhoto: String,
+  bioInfo: String,
+  appointments: [Date],
   userCreated: {
     type: Date,
     default: Date.now
-  },
-  career: {
-    type: String
-  },
-  appointments: {
-    type: Date
-  },
-  artistPhoto: {
-    type: String
-  },
-  bioInfo: {
-    type: String
   }
 });
 

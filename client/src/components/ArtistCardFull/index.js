@@ -18,9 +18,7 @@ function ArtistCardFull(props) {
           <div className='card-body'>
             <h5 className='card-title'>{props.name}</h5>
             <p className='card-text'>
-              Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt
-              tortor aliquam. Ac turpis egestas sed tempus urna et pharetra.
-              Nunc lobortis mattis aliquam faucibus purus in massa.
+              {props.bioInfo}
             </p>
             <p className='card-text'>
               <small className='text-muted'>Registered artist since 2010</small>

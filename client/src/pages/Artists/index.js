@@ -56,6 +56,7 @@ class Artists extends Component {
               <div className='row'>
                 <div className='col-md-12'>
                   <ArtistCardFull name={artist.name}></ArtistCardFull>
+                  <ArtistCardFull bioInfo={artist.bioInfo}></ArtistCardFull>
                 </div>
               </div>
             </div>
