@@ -9,10 +9,11 @@ const UserSchema = new Schema({
     type: String,
     trim: true
   },
-  username: {
+  email: {
     type: String,
-    trim: true,
-    required: 'Username is Required'
+    unique: true,
+    required: 'Email is Required',
+    match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
   },
   password: {
     type: String,
@@ -20,15 +21,10 @@ const UserSchema = new Schema({
     required: 'Password is Required',
     validate: [
       function(input) {
-        return input.length >= 6;
+        return input.length >= 3;
       },
       'Password should be longer.'
     ]
-  },
-  email: {
-    type: String,
-    unique: true,
-    match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
   },
   userCreated: {
     type: Date,

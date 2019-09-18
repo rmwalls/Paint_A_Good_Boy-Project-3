@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ArtistCardFull from '../../components/ArtistCardFull';
 import SelectBox from '../../components/SelectBox';
 import axios from 'axios';
+import Footer from '../../components/Footer';
 
 class Artists extends Component {
   state = {
@@ -34,6 +35,10 @@ class Artists extends Component {
   render() {
     return (
       <>
+        //The br's are to push the content below the navbar
+        <br></br>
+        <br></br>
+        <br></br>
         <h1>Artist List</h1>;
         <SelectBox
           width={300}
@@ -58,6 +63,7 @@ class Artists extends Component {
         ) : (
           <h3>No Results to Display</h3>
         )}
+        <Footer sticky-bottom='sticky-bottom' />
       </>
     );
   }

@@ -25,7 +25,7 @@ class Login extends Component {
 
     const { username, password } = this.state;
 
-    axios.post('/api/auth/login', { username, password })
+    axios.post('/api/users/login', { username, password })
       .then((result) => {
         localStorage.setItem('jwtToken', result.data.token);
         this.setState({ message: '' });
@@ -42,6 +42,9 @@ class Login extends Component {
     const { username, password, message } = this.state;
     return (
       <div class="container">
+        <br></br>
+        <br></br>
+        <br></br>
         <form class="form-signin" onSubmit={this.onSubmit}>
           {message !== '' &&
             <div class="alert alert-warning alert-dismissible" role="alert">

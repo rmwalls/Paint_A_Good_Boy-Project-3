@@ -9,7 +9,7 @@ var User = require('../../models/User');
 
 router.post('/register', function(req, res) {
   if (!req.body.username || !req.body.password) {
-    res.json({ success: false, msg: 'Please pass username and password.' });
+    res.json({ success: false, msg: 'Please include a username and password.' });
   } else {
     var newUser = new User({
       username: req.body.username,
@@ -23,14 +23,22 @@ router.post('/register', function(req, res) {
     newUser.save(function(err) {
       console.log('saving the user...');
       if (err) {
+<<<<<<< HEAD
         return res.json({ success: false, msg: err });
+=======
+        return res.json({ success: false, msg: 'Username already exists.' });
+
+        // Use this commented out piece of code to check the error
+        // messages on login/register
+        // return res.json({ success: false, msg: err });
+>>>>>>> 7df0b64646c3f6aba9d59bd15a450cca11b4b112
       }
       newUser.comparePassword(req.body.password, function() {
         var token = jwt.sign(newUser.toJSON(), settings.secret);
         // return the information including token as JSON
         res.json({
           success: true,
-          msg: 'Successful created new user.',
+          msg: 'Successfully created new user.',
           token: 'JWT ' + token
         });
       });
