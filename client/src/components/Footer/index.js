@@ -23,24 +23,24 @@ function Footer(props) {
                 <div className='collapse navbar-collapse' id='navbarNav'>
                     <ul className='navbar-nav mx-auto'>
                     <li className='nav-item' style={{ width: '300px' }}>
-                        <Link to='/' className='nav-link text-light'><img className="mx-2" src={githubLogo} width="35px"></img>
+                        <a href="https://github.com/smrogers93" target='_blank' className='nav-link text-light'><img className="mx-2" src={githubLogo} width="35px"></img>
                          Stephen Rogers<span className='sr-only'>(current)</span>
-                        </Link>
+                        </a>
                     </li>
                     <li className='nav-item' style={{ width: '300px' }}>
-                        <Link to='/artists' className='nav-link text-light'><img className="mx-2" src={githubLogo} width="35px"></img>
+                        <a href="https://github.com/rmwalls" target='_blank' className='nav-link text-light'><img className="mx-2" src={githubLogo} width="35px"></img>
                         Robbi Walls
-                        </Link>
+                        </a>
                     </li>
                     <li className='nav-item' style={{ width: '300px' }}>
-                        <Link to='/pricing' className='nav-link text-light'><img className="mx-2" src={githubLogo} width="35px"></img>
+                        <a href="https://github.com/mwmcguire" target='_blank' className='nav-link text-light'><img className="mx-2" src={githubLogo} width="35px"></img>
                         Mike McGuire
-                        </Link>
+                        </a>
                     </li>
                     <li className='nav-item' style={{ width: '300px' }}>
-                        <Link to='/login' className='nav-link text-light'><img className="mx-2" src={githubLogo} width="35px"></img>
+                        <a href="https://github.com/lucasmdmartins" target='_blank' className='nav-link text-light'><img className="mx-2" src={githubLogo} width="35px"></img>
                         Lucas Martins
-                        </Link>
+                        </a>
                     </li>
                     </ul>
                 </div>
