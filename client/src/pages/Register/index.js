@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import './Login.css';
 
 class Create extends Component {
@@ -35,7 +35,7 @@ class Create extends Component {
     const { username, password } = this.state;
     return (
       <div class="container">
-        //The br's are to push the content below the navbar
+        {/* The br's are to push the content below the navbar */}
         <br></br>
         <br></br>
         <br></br>
