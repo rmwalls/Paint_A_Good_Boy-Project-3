@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ArtistCardFull from '../../components/ArtistCardFull';
 import SelectBox from '../../components/SelectBox';
 import axios from 'axios';
+import Footer from '../../components/Footer';
 
 class Artists extends Component {
   state = {
@@ -62,6 +63,7 @@ class Artists extends Component {
         ) : (
           <h3>No Results to Display</h3>
         )}
+        <Footer sticky-bottom="sticky-bottom" />
       </>
     );
   }
