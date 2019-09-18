@@ -46,12 +46,7 @@ function Navbar() {
           </li>
           <li className='nav-item' style={{ width: '150px' }}>
             <Link to='/login' className='nav-link text-light'>
-              Login
-            </Link>
-          </li>
-          <li className='nav-item' style={{ width: '150px' }}>
-            <Link to='/register' className='nav-link text-light'>
-              Register
+              Log In
             </Link>
           </li>
         </ul>
