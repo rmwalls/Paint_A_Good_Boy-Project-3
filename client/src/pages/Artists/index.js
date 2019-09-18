@@ -14,7 +14,7 @@ class Artists extends Component {
   }
 
   setCareer = career => {
-    this.setState({ career: career }, this.loadArtistsByCareer());
+    this.setState({ career: career }, this.loadArtistsByCareer);
   };
 
   loadAllArtists = () => {
@@ -36,7 +36,7 @@ class Artists extends Component {
       <>
         <h1>Artist List</h1>;
         <SelectBox
-          width={400}
+          width={300}
           name='artist-specialty'
           items={[
             { value: 'Photograph', id: 1 },

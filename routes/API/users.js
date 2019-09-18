@@ -21,8 +21,9 @@ router.post('/register', function(req, res) {
 
     // save the user
     newUser.save(function(err) {
+      console.log('saving the user...');
       if (err) {
-        return res.json({ success: false, msg: 'Username already exists.' });
+        return res.json({ success: false, msg: err });
       }
       newUser.comparePassword(req.body.password, function() {
         var token = jwt.sign(newUser.toJSON(), settings.secret);
@@ -46,12 +47,10 @@ router.post('/login', function(req, res) {
       if (err) throw err;
       console.log(req.body.username);
       if (!user) {
-        res
-          .status(401)
-          .send({
-            success: false,
-            msg: 'Authentication failed. User not found.'
-          });
+        res.status(401).send({
+          success: false,
+          msg: 'Authentication failed. User not found.'
+        });
       } else {
         // check if password matches
         user.comparePassword(req.body.password, function(err, isMatch) {
@@ -61,12 +60,10 @@ router.post('/login', function(req, res) {
             // return the information including token as JSON
             res.json({ success: true, token: 'JWT ' + token });
           } else {
-            res
-              .status(401)
-              .send({
-                success: false,
-                msg: 'Authentication failed. Wrong password.'
-              });
+            res.status(401).send({
+              success: false,
+              msg: 'Authentication failed. Wrong password.'
+            });
           }
         });
       }
