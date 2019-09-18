@@ -8,6 +8,7 @@ import ImageGallery from '../../components/ImageGallery';
 import BigTile from '../../components/BigTile';
 import BigText from '../../components/BigText';
 import CatImage from '../../cat-image.jpg';
+import Footer from '../../components/Footer';
 import './Home.css';
 
 function Home() {
@@ -58,7 +59,10 @@ function Home() {
             <BigTile image='https://naturallivingfamily.com/wp-content/uploads/2018/01/How-to-Use-Essential-Oils-for-Dogs-and-Other-Pets.jpg' />
           </div>
         </Row>
+        <br></br>
+        <br></br>
       </Container>
+      <Footer />
     </>
   );
 }
