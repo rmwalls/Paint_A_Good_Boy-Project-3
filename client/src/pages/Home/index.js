@@ -7,7 +7,7 @@ import Col from '../../components/Col';
 import ImageGallery from '../../components/ImageGallery';
 import BigTile from '../../components/BigTile';
 import BigText from '../../components/BigText';
-import CatImage from '../../kitty.jpg';
+import CatImage from '../../cat-image.jpg';
 import Footer from '../../components/Footer';
 import './Home.css';
 import { Breakpoint } from 'react-socks';
@@ -36,19 +36,20 @@ function Home() {
         </Hero>
       </Breakpoint>
       <br></br>
-      <br></br>
       <Breakpoint m only>
-        <div className="row">
-          <div className="col-md-12">
-            <div className="card bg-dark text-white">
-              <img className="card-img" src="https://naturallivingfamily.com/wp-content/uploads/2018/01/How-to-Use-Essential-Oils-for-Dogs-and-Other-Pets.jpg" alt="Doggy"></img>
-              <div className="card-img-overlay">
-                <h1 className="display-1 card-title text-center">Give Them The Attention</h1>
-                <h1 className="display-1 card-title text-center">They Deserve</h1>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="card text-white text-center">
+                <img className="card-img rounded" src="https://naturallivingfamily.com/wp-content/uploads/2018/01/How-to-Use-Essential-Oils-for-Dogs-and-Other-Pets.jpg" alt="Doggy"></img>
+                <div className="card-img-overlay">
+                <br></br>
+                  <h1 className="display-3 card-title text-center">Give Them The Attention</h1>
+                  <h1 className="display-1 card-title text-center">They Deserve</h1>
+                  <button className='btn btn-lg btn-info'>Set An Appointment Today</button>  
+                </div>
               </div>
             </div>
           </div>
-        </div>
       </Breakpoint>
       <Container className='under-splash'>
         <Row>
