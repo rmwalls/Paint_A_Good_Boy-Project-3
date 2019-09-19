@@ -15,7 +15,7 @@ class Artists extends Component {
   }
 
   setCareer = career => {
-    this.setState({ career: career }, this.loadArtistsByCareer());
+    this.setState({ career: career }, this.loadArtistsByCareer);
   };
 
   loadAllArtists = () => {
@@ -35,13 +35,13 @@ class Artists extends Component {
   render() {
     return (
       <>
-      {/*The br's are to push the content below the navbar*/}
-      <br></br>
-      <br></br>
-      <br></br>
+        {/*The br's are to push the content below the navbar*/}
+        <br></br>
+        <br></br>
+        <br></br>
         <h1>Artist List</h1>;
         <SelectBox
-          width={400}
+          width={300}
           name='artist-specialty'
           items={[
             { value: 'Photograph', id: 1 },
@@ -55,7 +55,12 @@ class Artists extends Component {
             <div className='container'>
               <div className='row'>
                 <div className='col-md-12'>
-                <ArtistCardFull name={artist.name} bioInfo={artist.bioInfo} year={artist.career} pic={artist.artistPhoto} />
+                  <ArtistCardFull
+                    name={artist.name}
+                    bioInfo={artist.bioInfo}
+                    year={artist.career}
+                    pic={artist.artistPhoto}
+                  />
                 </div>
               </div>
             </div>
@@ -63,7 +68,7 @@ class Artists extends Component {
         ) : (
           <h3>No Results to Display</h3>
         )}
-        <Footer sticky-bottom="sticky-bottom" />
+        <Footer sticky-bottom='sticky-bottom' />
       </>
     );
   }

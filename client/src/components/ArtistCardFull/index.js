@@ -17,11 +17,11 @@ function ArtistCardFull(props) {
         <div className='col-md-10'>
           <div className='card-body'>
             <h5 className='card-title'>{props.name}</h5>
+            <p className='card-text'>{props.bioInfo}</p>
             <p className='card-text'>
-              {props.bioInfo}
-            </p>
-            <p className='card-text'>
-              <small className='text-muted'>Registered artist since {props.year}</small>
+              <small className='text-muted'>
+                Registered artist since {props.year}
+              </small>
             </p>
             <div className='d-flex'>
               <div className='justify-content-start'>

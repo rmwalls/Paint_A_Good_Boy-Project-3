@@ -8,21 +8,25 @@ var router = express.Router();
 var User = require('../../models/User');
 
 router.post('/register', function(req, res) {
-  if (!req.body.username || !req.body.password) {
-    res.json({ success: false, msg: 'Please include a username and password.' });
+  if (!req.body.email || !req.body.password) {
+    res.json({
+      success: false,
+      msg: 'Please include a email and password.'
+    });
   } else {
     var newUser = new User({
-      username: req.body.username,
+      email: req.body.email,
       password: req.body.password
     });
 
-    // console log to check whether the username is logged in correctly
-    console.log(req.body.username);
+    // console log to check whether the email is logged in correctly
+    console.log(req.body.email);
 
     // save the user
     newUser.save(function(err) {
+      console.log('saving the user...');
       if (err) {
-        return res.json({ success: false, msg: 'Username already exists.' });
+        return res.json({ success: false, msg: err });
 
         // Use this commented out piece of code to check the error
         // messages on login/register
@@ -44,18 +48,16 @@ router.post('/register', function(req, res) {
 router.post('/login', function(req, res) {
   User.findOne(
     {
-      username: req.body.username
+      email: req.body.email
     },
     function(err, user) {
       if (err) throw err;
-      console.log(req.body.username);
+      console.log(req.body.email);
       if (!user) {
-        res
-          .status(401)
-          .send({
-            success: false,
-            msg: 'Authentication failed. User not found.'
-          });
+        res.status(401).send({
+          success: false,
+          msg: 'Authentication failed. User not found.'
+        });
       } else {
         // check if password matches
         user.comparePassword(req.body.password, function(err, isMatch) {
@@ -65,12 +67,10 @@ router.post('/login', function(req, res) {
             // return the information including token as JSON
             res.json({ success: true, token: 'JWT ' + token });
           } else {
-            res
-              .status(401)
-              .send({
-                success: false,
-                msg: 'Authentication failed. Wrong password.'
-              });
+            res.status(401).send({
+              success: false,
+              msg: 'Authentication failed. Wrong password.'
+            });
           }
         });
       }
