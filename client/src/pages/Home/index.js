@@ -10,29 +10,42 @@ import BigText from '../../components/BigText';
 import CatImage from '../../kitty.jpg';
 import Footer from '../../components/Footer';
 import './Home.css';
+import { Breakpoint } from 'react-socks';
 
 function Home() {
   return (
     <>
     <br></br>
-    <Hero backgroundImage='https://data.1freewallpapers.com/download/autumn-animals-leaves-grass-dogs-puppies-adventure-golden-retriever-fallen-high-quality.jpg'>
-        <Container>
-          <Row>
-            <Col size='md-6'>
-              <div className='splash-text my-5'>
-                <h1 className='display-1 text-white text-left'>Give Them</h1>
-                <h1 className='display-1 text-white text-left'>The Attention</h1>
-                <h1 className='display-1 text-white text-left'>They</h1>
-                <h1 className='display-1 text-white text-left'>Deserve</h1>
+    <Breakpoint l only>
+      <Hero backgroundImage='https://data.1freewallpapers.com/download/autumn-animals-leaves-grass-dogs-puppies-adventure-golden-retriever-fallen-high-quality.jpg'>
+          <Container>
+            <Row>
+              <Col size='md-6'>
+                <div className='splash-text my-5'>
+                  <h1 className='display-1 text-white text-left'>Give Them</h1>
+                  <h1 className='display-1 text-white text-left'>The Attention</h1>
+                  <h1 className='display-1 text-white text-left'>They</h1>
+                  <h1 className='display-1 text-white text-left'>Deserve</h1>
+                </div>
+              </Col>
+              <div className='col-md-6 d-flex my-5'>
+                <button className='btn btn-block btn-lg btn-info'>Set An Appointment Today</button>
               </div>
-            </Col>
-            <div className='col-md-6 d-flex my-5'>
-              <button className='btn btn-block btn-lg btn-info'>Set An Appointment Today</button>
-            </div>
-          </Row>
-        </Container>
-      </Hero>
+            </Row>
+          </Container>
+        </Hero>
+      </Breakpoint>
       <br></br>
+      <br></br>
+      <Breakpoint m only>
+        <div className="row">
+          <div className="col-md-12">
+            <div className="jumbotron">
+              
+            </div>
+          </div>
+        </div>
+      </Breakpoint>
       <Container className='under-splash'>
         <Row>
           <Col size='md-12'>
@@ -41,7 +54,10 @@ function Home() {
           </Col>
         </Row>
       </Container>
+      <Breakpoint l only>
       <ImageGallery />
+      </Breakpoint>
+      <Breakpoint l only>
       <Container className='no-padding'>
         <Row>
           <div className='col-md-6 d-flex'>
@@ -62,6 +78,7 @@ function Home() {
         <br></br>
         <br></br>
       </Container>
+      </Breakpoint>
       <Footer />
     </>
   );
