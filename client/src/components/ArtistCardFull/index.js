@@ -7,23 +7,21 @@ function ArtistCardFull(props) {
       <div className='row no-gutters'>
         <div className='col-md-2'>
           <img
-            src='https://via.placeholder.com/150'
+            src={props.pic}
             className='card-img'
             alt='...'
-            height='100%'
-            width='100%'
+            height='200px'
+            width='200px'
           ></img>
         </div>
         <div className='col-md-10'>
           <div className='card-body'>
             <h5 className='card-title'>{props.name}</h5>
             <p className='card-text'>
-              Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt
-              tortor aliquam. Ac turpis egestas sed tempus urna et pharetra.
-              Nunc lobortis mattis aliquam faucibus purus in massa.
+              {props.bioInfo}
             </p>
             <p className='card-text'>
-              <small className='text-muted'>Registered artist since 2010</small>
+              <small className='text-muted'>Registered artist since {props.year}</small>
             </p>
             <div className='d-flex'>
               <div className='justify-content-start'>
