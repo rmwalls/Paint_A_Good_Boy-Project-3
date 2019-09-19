@@ -9,6 +9,11 @@ const ArtistSchema = new Schema({
     type: String,
     required: true
   },
+  email: {
+    type: String,
+    unique: true,
+    match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
+  },
   password: {
     type: String,
     trim: true,
@@ -20,26 +25,15 @@ const ArtistSchema = new Schema({
       'Password should be longer.'
     ]
   },
-  email: {
-    type: String,
-    unique: true,
-    match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
-  },
+  isArtist: Boolean,
+  career: String,
+  media: [String],
+  artistPhoto: String,
+  bioInfo: String,
+  appointments: [Date],
   userCreated: {
     type: Date,
     default: Date.now
-  },
-  career: {
-    type: String
-  },
-  appointments: {
-    type: Date
-  },
-  artistPhoto: {
-    type: String
-  },
-  bioInfo: {
-    type: String
   }
 });
 

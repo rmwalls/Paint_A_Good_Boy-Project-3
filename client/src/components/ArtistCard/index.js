@@ -34,10 +34,5 @@ class ArtistCard extends Component {
     }
 }
 
-// function ArtistCard() {
-//     return (
-//         <a className="mx-3" href="https://placeholder.com"><img src="https://via.placeholder.com/150" alt="artist" /></a>
-//     )
-// }
-
+//will likely use clickedIds for appointment scheduling
 export default ArtistCard;

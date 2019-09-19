@@ -35,7 +35,7 @@ class Artists extends Component {
   render() {
     return (
       <>
-        //The br's are to push the content below the navbar
+        {/*The br's are to push the content below the navbar*/}
         <br></br>
         <br></br>
         <br></br>
@@ -56,9 +56,11 @@ class Artists extends Component {
               <div className='row'>
                 <div className='col-md-12'>
                   <ArtistCardFull
-                    artistPhoto={artist.artistPhoto}
                     name={artist.name}
-                  ></ArtistCardFull>
+                    bioInfo={artist.bioInfo}
+                    year={artist.career}
+                    pic={artist.artistPhoto}
+                  />
                 </div>
               </div>
             </div>

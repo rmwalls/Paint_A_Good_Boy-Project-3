@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import './Login.css';
 
 class Create extends Component {
@@ -33,12 +33,12 @@ class Create extends Component {
     const { email, password } = this.state;
     return (
       <div class='container'>
-        //The br's are to push the content below the navbar
+        {/* The br's are to push the content below the navbar */}
         <br></br>
         <br></br>
         <br></br>
         <form class='form-signin' onSubmit={this.onSubmit}>
-          <h2 class='form-signin-heading'>Register</h2>
+          <h2 class='form-signin-heading'>Sign Up</h2>
           <label for='inputEmail' class='sr-only'>
             Email address
           </label>
@@ -46,8 +46,8 @@ class Create extends Component {
             type='email'
             class='form-control'
             placeholder='Email address'
-            name='email'
-            value={email}
+            name='username'
+            value={username}
             onChange={this.onChange}
             required
           />
@@ -64,7 +64,7 @@ class Create extends Component {
             required
           />
           <button class='btn btn-lg btn-primary btn-block' type='submit'>
-            Register
+            Sign Up
           </button>
         </form>
       </div>
