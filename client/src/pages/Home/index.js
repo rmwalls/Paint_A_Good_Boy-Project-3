@@ -40,8 +40,12 @@ function Home() {
       <Breakpoint m only>
         <div className="row">
           <div className="col-md-12">
-            <div className="jumbotron">
-              
+            <div className="card bg-dark text-white">
+              <img className="card-img" src="https://naturallivingfamily.com/wp-content/uploads/2018/01/How-to-Use-Essential-Oils-for-Dogs-and-Other-Pets.jpg" alt="Doggy"></img>
+              <div className="card-img-overlay">
+                <h1 className="display-1 card-title text-center">Give Them The Attention</h1>
+                <h1 className="display-1 card-title text-center">They Deserve</h1>
+              </div>
             </div>
           </div>
         </div>
@@ -79,7 +83,7 @@ function Home() {
         <br></br>
       </Container>
       </Breakpoint>
-      <Footer />
+            <Footer />
     </>
   );
 }
