@@ -41,7 +41,7 @@ class Artists extends Component {
         <br></br>
         <h1>Artist List</h1>;
         <SelectBox
-          width={300}
+          width={200}
           name='artist-specialty'
           items={[
             { value: 'Photograph', id: 1 },

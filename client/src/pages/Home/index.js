@@ -27,7 +27,7 @@ function Home() {
               </div>
             </Col>
             <div className='col-md-6 d-flex my-5'>
-              <button className='btn btn-block btn-lg btn-info'>Set An Appointment Today</button>
+              <button className='btn btn-block btn-lg purple-background white btn-info'>Set An Appointment Today</button>
             </div>
           </Row>
         </Container>
