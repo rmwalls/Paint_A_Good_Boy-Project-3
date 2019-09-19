@@ -7,7 +7,7 @@ function ArtistCardFull(props) {
       <div className='row no-gutters'>
         <div className='col-md-2'>
           <img
-            src='https://via.placeholder.com/150'
+            src={props.artistPhoto}
             className='card-img'
             alt='...'
             height='100%'
