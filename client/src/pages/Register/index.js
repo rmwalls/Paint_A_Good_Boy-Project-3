@@ -46,8 +46,8 @@ class Create extends Component {
             type='email'
             class='form-control'
             placeholder='Email address'
-            name='username'
-            value={username}
+            name='email'
+            value={email}
             onChange={this.onChange}
             required
           />
