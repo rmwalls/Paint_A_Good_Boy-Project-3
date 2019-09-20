@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ArtistCardFull from '../../components/ArtistCardFull';
-import SelectBox from '../../components/SelectBox';
 import axios from 'axios';
 import Footer from '../../components/Footer';
 

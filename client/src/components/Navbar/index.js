@@ -4,10 +4,23 @@ import './style.css';
 import logo from './logo.png';
 
 class Navbar extends React.Component {
-  
+  // state = {
+  //   logInChage: false;
+  // }
   logout = () => {
     localStorage.removeItem('jwtToken');
     window.location.reload();
+  }
+
+  showProtectedRoutes = () => {
+    if(localStorage.getItem("jwtToken") === null) {
+      return ( 
+        <li className='nav-item' style={{ width: '150px' }}>
+          <Link to='/login' className='nav-link text-light'>
+            Log In
+          </Link>
+      </li>);
+    }
   }
 
   render () {
@@ -51,11 +64,9 @@ class Navbar extends React.Component {
               Pricing
             </Link>
           </li>
-          <li className='nav-item' style={{ width: '150px' }}>
-            <Link to='/login' className='nav-link text-light'>
-              Log In
-            </Link>
-          </li>
+          {
+            this.showProtectedRoutes()
+          }
           <li className='nav-item' style={{ width: '150px' }}>
             <Link to='/' className='nav-link text-light' onClick={this.logout}>
               Log Out
