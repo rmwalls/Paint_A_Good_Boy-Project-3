@@ -4,14 +4,24 @@ import './App.css';
 
 import Navbar from './components/Navbar';
 import ContainerMain from './components/ContainerMain';
+import { Breakpoint, BreakpointProvider } from 'react-socks';
+import { setDefaultBreakpoints } from 'react-socks';
+
+setDefaultBreakpoints([
+  { s: 0 },
+  { m: 800},
+  { l: 1260 }
+])
 
 const App = () => (
-  <Router>
-    <div>
-      <Navbar />
-      <ContainerMain />
-    </div>  
-  </Router>
-);
+      <BreakpointProvider>
+        <Router>
+          <div>
+            <Navbar />
+            <ContainerMain />
+          </div>  
+        </Router>
+      </BreakpointProvider>
+    );
 
 export default App;
