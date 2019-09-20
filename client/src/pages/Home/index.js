@@ -41,11 +41,20 @@ function Home() {
             <div className="col-md-12">
               <div className="card text-white text-center">
                 <img className="card-img rounded" src="https://naturallivingfamily.com/wp-content/uploads/2018/01/How-to-Use-Essential-Oils-for-Dogs-and-Other-Pets.jpg" alt="Doggy"></img>
-                <div className="card-img-overlay">
-                <br></br>
-                  <h1 className="display-3 card-title text-center">Give Them The Attention</h1>
-                  <h1 className="display-1 card-title text-center">They Deserve</h1>
-                  <button className='btn btn-lg btn-info'>Set An Appointment Today</button>  
+                <div className="card-img-overlay d-flex flex-column justify-content-sm-between">
+                  <div className="my-4">
+                    <h1 className="display-3 card-title text-center">Give Them The Attention</h1>
+                    <h1 className="display-1 card-title text-center">They Deserve</h1>
+                    <button className='btn btn-lg btn-info'>Set An Appointment Today</button>  
+                  </div>
+                  <div className="jumbotron text-dark">
+                    <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <hr className="my-4"></hr>
+                    <p>It uses utility class for typography and spacing to space content out within the larger container.</p>
+                    <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                  </div>
+
+
                 </div>
               </div>
             </div>
@@ -54,7 +63,7 @@ function Home() {
       <Container className='under-splash'>
         <Row>
           <Col size='md-12'>
-            <h1 className='display-2 text-dark text-center'>Paint A Good Boy</h1>
+            <h1 className='display-2 text-dark text-center my-2'>Paint A Good Boy</h1>
             <h1 className=' text-dark text-center'>Meet Our Artists</h1>
           </Col>
         </Row>
