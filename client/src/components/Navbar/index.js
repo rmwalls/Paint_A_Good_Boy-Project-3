@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom';
 import './style.css';
 import logo from './logo.png';
 
-function Navbar() {
+class Navbar extends React.Component {
+  
+  logout = () => {
+    localStorage.removeItem('jwtToken');
+    window.location.reload();
+  }
+
+  render () {
   return (
     <nav className='navbar fixed-top navbar-expand-lg navbar-light bg-dark '>
       <img
@@ -49,10 +56,16 @@ function Navbar() {
               Log In
             </Link>
           </li>
+          <li className='nav-item' style={{ width: '150px' }}>
+            <Link to='/' className='nav-link text-light' onClick={this.logout}>
+              Log Out
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
   );
+}
 }
 
 export default Navbar;
