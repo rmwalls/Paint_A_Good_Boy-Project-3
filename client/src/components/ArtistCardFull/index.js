@@ -8,10 +8,10 @@ function ArtistCardFull(props) {
         <div className='col-md-2'>
           <img
             src={props.pic}
-            className='card-img'
+            className='card-img img-thumbnail'
             alt='...'
-            height='200px'
-            width='200px'
+            height='100%'
+            width='100%'
           ></img>
         </div>
         <div className='col-md-10'>
@@ -19,14 +19,14 @@ function ArtistCardFull(props) {
             <h5 className='card-title'>{props.name}</h5>
             <p className='card-text'>{props.bioInfo}</p>
             <p className='card-text'>
-              <small className='text-muted'>
-                Registered artist since {props.year}
-              </small>
             </p>
             <div className='d-flex'>
               <div className='justify-content-start'>
-                <button className='btn btn-primary btn-sm'>
+                <button className='btn btn-primary btn-sm mx-1'>
                   Meet With This Artist
+                </button>
+                <button className='btn btn-secondary btn-sm'>
+                  View Their Work
                 </button>
               </div>
             </div>
