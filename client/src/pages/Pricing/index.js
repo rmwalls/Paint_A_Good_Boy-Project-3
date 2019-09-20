@@ -1,4 +1,19 @@
-//Pricing page
+//Pricing page - for artists
+import React from "react";
+import NavBar from "../../components/NavBar";
+import ArtistPricing from "../../components/ArtistPricing";
+import Footer from "../../components/Footer";
+
+function Pricing() {
+    return (
+        <div>
+            <NavBar />
+            <ArtistPricing />
+            <Footer />
+        </div>
+    )
+}
+
 
 //https://www.ibtimes.com/pet-industry-spending-trends-expected-2019-2746276
 //https://www.businessinsider.com/pet-care-industry-grows-as-millennials-elevate-pets-2019-5
@@ -19,3 +34,5 @@
 //Pet photography is one of the newest pet trends. It takes our love for pet photography and places it in the hands of the professionals. Pet owners want to see their loved companions in the best light.
 
 //The best pet photographers love animals, have a great sense of style, and can handle pets to get the best results. My step-children are grown and live in another state and another country. So? I get Christmas photos with our dogs every year! There is a lot of opportunity for revenue and income in the pet photography industry. Why not join with us and see your business grow?
+
+export default Pricing;

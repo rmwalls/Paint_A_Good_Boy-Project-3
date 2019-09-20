@@ -8,7 +8,7 @@ function BigText() {
                 <div className="card-body">
 
                     <h1 className="display-1 text-black card-text text-left">We Love Them Like Our Kids</h1>
-                    <h2 className=" text-black card-text text-left">Let's Record Some Memories</h2>
+                    <h2 className="text-black card-text text-left">Let's Record Some Memories</h2>
                     <p className="card-text">Our artists can meet your needs for photography, videography, paintings and/or other art. Read their bios, look at samples of their work and then schedule some time to discuss your wishes and get a quote. You'll be so glad you did!</p>
                     <br></br>
                     <h1 className="display-1 text-black card-text text-left">Dogs, Cats, Birds...</h1>

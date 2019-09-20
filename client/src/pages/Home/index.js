@@ -3,11 +3,11 @@ import Hero from '../../components/Hero';
 import Container from '../../components/Container';
 import Row from '../../components/Row';
 import Col from '../../components/Col';
-//import Cal from '../../components/Cal';
+//import Cal from '../../components/Cal'; this isn't being called
 import ImageGallery from '../../components/ImageGallery';
 import BigTile from '../../components/BigTile';
 import BigText from '../../components/BigText';
-import CatImage from '../../cat-image.jpg';
+import CatImage from '../../kitty.jpg';
 import Footer from '../../components/Footer';
 import './Home.css';
 import { Breakpoint } from 'react-socks';
