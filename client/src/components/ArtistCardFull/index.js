@@ -1,4 +1,5 @@
 import React from 'react';
+import Lightbox from "../../components/Lightbox"
 import './style.css';
 
 function ArtistCardFull(props) {
@@ -20,15 +21,12 @@ function ArtistCardFull(props) {
             <p className='card-text'>{props.bioInfo}</p>
             <p className='card-text'>
             </p>
-            <div className='d-flex'>
-              <div className='justify-content-start'>
-                <button className='btn btn-primary btn-sm mx-1'>
-                  Meet With This Artist
-                </button>
-                <button className='btn btn-secondary btn-sm'>
-                  View Their Work
-                </button>
-              </div>
+            <div className='d-inline-flex'>
+              <button className='btn btn-primary btn-sm mr-1'>
+                Meet With This Artist
+              </button>
+
+              <Lightbox></Lightbox>
             </div>
           </div>
         </div>
