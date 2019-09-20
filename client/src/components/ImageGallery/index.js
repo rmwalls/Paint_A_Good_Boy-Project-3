@@ -1,5 +1,6 @@
+//This component displays items in a carousel, currently used for artist headshots
 import React from "react";
-//import Col from "../Col";
+//import Col from "../Col"; not being called
 import ArtistCard from "../ArtistCard"
 import "./style.css";
 
