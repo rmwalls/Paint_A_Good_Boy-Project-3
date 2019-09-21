@@ -3,6 +3,9 @@ import Lightbox from "../../components/Lightbox"
 import './style.css';
 
 function ArtistCardFull(props) {
+
+    console.log(props);
+
   return (
     <div className='card mb-3'>
       <div className='row no-gutters'>
@@ -25,8 +28,7 @@ function ArtistCardFull(props) {
               <button className='btn btn-primary btn-sm mr-1'>
                 Meet With This Artist
               </button>
-
-              <Lightbox></Lightbox>
+              <Lightbox media={props.media}></Lightbox>
             </div>
           </div>
         </div>

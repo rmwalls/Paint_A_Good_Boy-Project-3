@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../../components/Hero';
 import Container from '../../components/Container';
+import { Link } from 'react-router-dom';
 import Row from '../../components/Row';
 import Col from '../../components/Col';
 //import Cal from '../../components/Cal'; this isn't being called
@@ -45,13 +46,13 @@ function Home() {
                   <div className="my-4">
                     <h1 className="display-3 card-title text-center">Give Them The Attention</h1>
                     <h1 className="display-1 card-title text-center">They Deserve</h1>
-                    <button className='btn btn-lg btn-info'>Set An Appointment Today</button>  
+                    <Link to="/artists" className='btn btn-lg btn-info'>Set An Appointment Today</Link>  
                   </div>
                   <div className="jumbotron text-dark">
                     <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
                     <hr className="my-4"></hr>
                     <p>It uses utility class for typography and spacing to space content out within the larger container.</p>
-                    <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                    <Link to='/pricing' className="btn btn-primary btn-lg" role="button">Learn more</Link>
                   </div>
 
 
