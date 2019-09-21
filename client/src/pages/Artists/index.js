@@ -7,7 +7,7 @@ class Artists extends Component {
   state = {
     artists: [],
     career: '',
-    userId: localStorage.getItem('userId')
+    userId: localStorage.getItem('userId'),
     selectedDay: undefined
   };
 
