@@ -7,11 +7,13 @@ class Artists extends Component {
   state = {
     artists: [],
     career: '',
+    userId: localStorage.getItem('userId')
     selectedDay: undefined
   };
 
   componentDidMount() {
     this.loadAllArtists();
+    console.log("this is the muthafkn userID!: " + this.state.userId);
   }
 
   setCareer = career => {

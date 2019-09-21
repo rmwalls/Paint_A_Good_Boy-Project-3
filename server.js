@@ -12,6 +12,14 @@ app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// app.use("/api", (req, res, next) => {
+//   // CHECK TOKEN
+//   if(!req.body.token) {
+//     res.status(401).end();
+//   }
+//   return next();
+// })
+
 // Connect to the Mongo DB
 const url = process.env.MONGODB_URI || 'mongodb://localhost/petapp';
 console.log('Connecting to db');

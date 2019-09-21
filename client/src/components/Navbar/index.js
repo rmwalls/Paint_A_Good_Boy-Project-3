@@ -9,19 +9,19 @@ class Navbar extends React.Component {
   // }
   logout = () => {
     localStorage.removeItem('jwtToken');
+    localStorage.removeItem('userId');
+    this.props.updateLoginState(false);
     window.location.reload();
   }
 
-  showProtectedRoutes = () => {
-    if(localStorage.getItem("jwtToken") === null) {
-      return ( 
-        <li className='nav-item' style={{ width: '150px' }}>
-          <Link to='/login' className='nav-link text-light'>
-            Log In
-          </Link>
-      </li>);
-    }
-  }
+  // showProtectedRoutes = () => {
+  //   if(localStorage.getItem("jwtToken") === null) {
+  //     console.log("testing navbar items");
+  //     return ( 
+
+
+  //   }
+  // }
 
   render () {
   return (
@@ -65,13 +65,20 @@ class Navbar extends React.Component {
             </Link>
           </li>
           {
-            this.showProtectedRoutes()
+            this.props.loggedIn ?
+              <li className='nav-item' style={{ width: '150px' }}>
+                <Link to='/' className='nav-link text-light' onClick={this.logout}>
+                  Log Out
+                </Link>
+              </li>
+             :       
+              <li className='nav-item' style={{ width: '150px' }}>
+                <Link to='/login' className='nav-link text-light'>
+                  Log In
+                </Link>
+              </li>
           }
-          <li className='nav-item' style={{ width: '150px' }}>
-            <Link to='/' className='nav-link text-light' onClick={this.logout}>
-              Log Out
-            </Link>
-          </li>
+         
         </ul>
       </div>
     </nav>
