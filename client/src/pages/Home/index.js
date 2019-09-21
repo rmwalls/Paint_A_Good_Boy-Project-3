@@ -7,6 +7,7 @@ import Col from '../../components/Col';
 //import Cal from '../../components/Cal'; this isn't being called
 import ImageGallery from '../../components/ImageGallery';
 import BigTile from '../../components/BigTile';
+import BigText from '../../components/BigText';
 import InstructionUser from '../../components/InstructionUser';
 import InstructionArtist from '../../components/InstructionArtist';
 import CatImage from '../../kitty.jpg';
@@ -59,21 +60,21 @@ function Home() {
                     <p>It uses utility class for typography and spacing to space content out within the larger container.</p>
                     <Link to='/pricing' className="btn btn-primary btn-lg" role="button">Learn more</Link>
                   </div>
-
-
                 </div>
               </div>
             </div>
           </div>
-        </div>
       </Breakpoint>
+
       <Container className='under-splash'>
         <Row>
           <Col size='md-12'>
             <h1 className='display-2 text-dark text-center my-2'>
               Paint A Good Boy
             </h1>
-            <h1 className=' text-dark text-center'>Meet Our Artists</h1>
+            <Breakpoint l only>
+              <h1 className=' text-dark text-center'>Meet Our Artists</h1>
+            </Breakpoint>
           </Col>
         </Row>
       </Container>
@@ -102,7 +103,12 @@ function Home() {
           <br></br>
         </Container>
       </Breakpoint>
-      <Footer />
+      <Breakpoint m only>
+        <BigText></BigText>
+      </Breakpoint>
+      <Breakpoint l only>
+        <Footer />
+      </Breakpoint>
     </>
   );
 }
