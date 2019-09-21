@@ -1,38 +1,48 @@
 //Pricing page - for artists
 import React from "react";
-import NavBar from "../../components/NavBar";
-import ArtistPricing from "../../components/ArtistPricing";
 import Footer from "../../components/Footer";
+import ArtistPricing from "../../components/ArtistPricing";
+import Container from "../../components/Container";
+import Row from '../../components/Row';
+import Col from '../../components/Col';
+import BigTile from "../../components/BigTile";
+import "./Pricing.css";
 
 function Pricing() {
     return (
-        <div>
-            <NavBar />
-            <ArtistPricing />
-            <Footer />
-        </div>
+        <>
+            <Container className='pricebody'>
+                <Row>
+                    <Col size='md-12'>
+                        <div>
+                            <ArtistPricing />
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size='md-6'>
+                        <p>We have three membership options. <a href="mailto:groovyrlm@gmail.com">Contact Us</a> for more information on what we provide!</p>
+                    </Col>
+                    <Col size='md-6'>
+                        <p>Monthly Fee plus:</p>
+                        <ul>
+                            <li>Fee per lead</li>
+                            <li>Fee per booking</li>
+                            <li>Fee per click</li>
+                        </ul>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size='md-6'>
+                        <BigTile image="../../img/other/APPA_stats.jpg" />
+                    </Col>
+                    <Col size='md-6'>
+                        <BigTile image="../../img/other/APPA_stats2.jpg" />
+                    </Col>
+                </Row>
+            </Container>
+                <Footer sticky-bottom='sticky-bottom' />
+        </>
     )
 }
-
-
-//https://www.ibtimes.com/pet-industry-spending-trends-expected-2019-2746276
-//https://www.businessinsider.com/pet-care-industry-grows-as-millennials-elevate-pets-2019-5
-//https://zoomroom.com/franchise/pet-services-industry/
-
-
-// Link to articles about pet industry, 
-//market this site as a way to reach out to people
-// possible monetizing for the site:
-    //monthly fee
-    //fee per lead
-    //fee per booking
-    //fee per click
-
-
-    //We Americans love our selfies. But coming in at a close second is how much we love photographs of our pets.
-
-//Pet photography is one of the newest pet trends. It takes our love for pet photography and places it in the hands of the professionals. Pet owners want to see their loved companions in the best light.
-
-//The best pet photographers love animals, have a great sense of style, and can handle pets to get the best results. My step-children are grown and live in another state and another country. So? I get Christmas photos with our dogs every year! There is a lot of opportunity for revenue and income in the pet photography industry. Why not join with us and see your business grow?
-
 export default Pricing;

@@ -7,6 +7,7 @@ import Home from '../../pages/Home';
 import Artists from '../../pages/Artists';
 import Register from '../../pages/Register';
 import Login from '../../pages/Login';
+import Pricing from '../../pages/Pricing';
 
 function ContainerMain({ location }) {
   return (
@@ -23,6 +24,7 @@ function ContainerMain({ location }) {
                         <Route exact path='/artists' component={Artists} />
                         <Route exact path='/login' component={Login} />
                         <Route exact path='/register' component={Register} />
+                        <Route exact path='/pricing' component={Pricing} />
                     </Switch>
                 </section>
             </CSSTransition>
