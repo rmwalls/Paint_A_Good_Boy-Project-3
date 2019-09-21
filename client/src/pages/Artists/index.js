@@ -13,7 +13,7 @@ class Artists extends Component {
 
   componentDidMount() {
     this.loadAllArtists();
-    console.log("this is the muthafkn userID!: " + this.state.userId);
+    console.log('this is the muthafkn userID!: ' + this.state.userId);
   }
 
   setCareer = career => {
