@@ -1,8 +1,5 @@
 # PRECIOUS PETS/PAINT A GOOD BOY
 
-:camera: :art: :framed_picture: :video_camera: `<br>`
-:dog: :cat2: :horse: :hamster: :rabbit: :snake: :turtle: :tropical_fish:
-
 * This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 * Deployed to Heroku --> <https://nameless-reef-65979.herokuapp.com/>
 
@@ -32,3 +29,14 @@
                 | * "nodemon": "^1.19.2"
 
 ## What Is This Application For
+
+:camera: :art: :framed_picture: :video_camera: `<br>`
+:dog: :cat2: :horse: :hamster: :rabbit: :snake: :turtle: :tropical_fish:
+
+### We Want in on the Growing Pet Services Industry
+
+Our App can be used by photographers, videographers and painters to show their abilities in pet-based art. We will hook them up with people looking to save precious memories of their pets. We anticipate charging a fee to the artists while users/clients will not pay to use the site. The artists and clients will negotiotiate their own project costs.
+
+Registration and Login will be required for both artists and clients. See screenshots below.
+
+![AppHome](client/public/img/other/AppHome.jpg)
