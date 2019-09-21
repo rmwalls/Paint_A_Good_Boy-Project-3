@@ -9,7 +9,7 @@ function ArtistCardFull(props) {
     console.log(props);
 
   return (
-    <div className='card mb-3'>
+    <div className='card bg-light mb-3'>
       <div className='row no-gutters'>
         <div className='col-md-2'>
           <img
@@ -39,7 +39,6 @@ function ArtistCardFull(props) {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }
