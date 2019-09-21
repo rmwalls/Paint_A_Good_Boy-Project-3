@@ -1,8 +1,10 @@
 .btn-info {
     align-self: flex-end;
-}
-.purple-background {
     background-color:#796C6F;
+    border: none
+}
+.btn-info:hover {
+    background-color:#979E93;
 }
 .white {
     color:#F6F6F6;

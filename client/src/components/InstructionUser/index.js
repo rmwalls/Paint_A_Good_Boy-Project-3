@@ -1,5 +1,6 @@
 //instructions for the home page for users
 import React from 'react';
+import './style.css';
 
 function InstructionUser() {
     return (
