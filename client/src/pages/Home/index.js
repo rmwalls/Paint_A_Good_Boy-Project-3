@@ -6,7 +6,8 @@ import Col from '../../components/Col';
 //import Cal from '../../components/Cal'; this isn't being called
 import ImageGallery from '../../components/ImageGallery';
 import BigTile from '../../components/BigTile';
-import BigText from '../../components/BigText';
+import InstructionUser from '../../components/InstructionUser';
+import InstructionArtist from '../../components/InstructionArtist';
 import CatImage from '../../kitty.jpg';
 import Footer from '../../components/Footer';
 import './Home.css';
@@ -78,12 +79,12 @@ function Home() {
             <BigTile image={CatImage} />
           </div>
           <div className='col-md-6 d-flex'>
-            <BigText />
+            <InstructionUser />
           </div>
         </Row>
         <Row>
           <div className='col-md-6 d-flex'>
-            <BigText />
+            <InstructionArtist />
           </div>
           <div className='col-md-6 d-flex'>
             <BigTile image='https://naturallivingfamily.com/wp-content/uploads/2018/01/How-to-Use-Essential-Oils-for-Dogs-and-Other-Pets.jpg' />
