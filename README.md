@@ -45,6 +45,6 @@ Registration and Login will be required for both artists and clients. See screen
 
 ![LogInPage](client/public/img/other/LogIn.jpg)
 
-![ArtistsPage](client/public/img/other/Artists.jpg)
+![ArtistsPage](client/public/img/other/ArtistPage.jpg)
 
 ![PricingPage](client/public/img/other/Pricing.jpg)
