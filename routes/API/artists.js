@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// @route    GET api/artists/career
+// @route    GET api/artists/:career
 // @desc     Get artist info by their profession
 // @access   Public
 router.get('/:career', (req, res) => {

@@ -6,7 +6,8 @@ import Footer from '../../components/Footer';
 class Artists extends Component {
   state = {
     artists: [],
-    career: ''
+    career: '',
+    selectedDay: undefined
   };
 
   componentDidMount() {
@@ -38,12 +39,12 @@ class Artists extends Component {
         <br></br>
         <br></br>
         <br></br>
-        <div className="row">
-          <div className="col-md-12">
-            <h1 className="text-center">Artist List</h1>
+        <div className='row'>
+          <div className='col-md-12'>
+            <h1 className='text-center'>Artist List</h1>
           </div>
         </div>
-        
+
         {this.state.artists.length ? (
           this.state.artists.map(artist => (
             <div className='container'>
