@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ArtistCardFull from '../../components/ArtistCardFull';
-import 'react-day-picker/lib/style.css';
-import SelectBox from '../../components/SelectBox';
 import axios from 'axios';
 import Footer from '../../components/Footer';
 
@@ -41,17 +39,12 @@ class Artists extends Component {
         <br></br>
         <br></br>
         <br></br>
-        <h1>Artist List</h1>;
-        <SelectBox
-          width={300}
-          name='artist-specialty'
-          items={[
-            { value: 'Photograph', id: 1 },
-            { value: 'Painting', id: 2 },
-            { value: 'Video', id: 3 }
-          ]}
-          onChange={this.setCareer}
-        />
+        <div className='row'>
+          <div className='col-md-12'>
+            <h1 className='text-center'>Artist List</h1>
+          </div>
+        </div>
+
         {this.state.artists.length ? (
           this.state.artists.map(artist => (
             <div className='container'>

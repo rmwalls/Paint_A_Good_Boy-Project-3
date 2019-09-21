@@ -3,7 +3,27 @@ import { Link } from 'react-router-dom';
 import './style.css';
 import logo from './logo.png';
 
-function Navbar() {
+class Navbar extends React.Component {
+  // state = {
+  //   logInChage: false;
+  // }
+  logout = () => {
+    localStorage.removeItem('jwtToken');
+    window.location.reload();
+  }
+
+  showProtectedRoutes = () => {
+    if(localStorage.getItem("jwtToken") === null) {
+      return ( 
+        <li className='nav-item' style={{ width: '150px' }}>
+          <Link to='/login' className='nav-link text-light'>
+            Log In
+          </Link>
+      </li>);
+    }
+  }
+
+  render () {
   return (
     <nav className='navbar fixed-top navbar-expand-lg navbar-light bg-dark '>
       <img
@@ -44,15 +64,19 @@ function Navbar() {
               Pricing
             </Link>
           </li>
+          {
+            this.showProtectedRoutes()
+          }
           <li className='nav-item' style={{ width: '150px' }}>
-            <Link to='/login' className='nav-link text-light'>
-              Log In
+            <Link to='/' className='nav-link text-light' onClick={this.logout}>
+              Log Out
             </Link>
           </li>
         </ul>
       </div>
     </nav>
   );
+}
 }
 
 export default Navbar;

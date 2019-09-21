@@ -1,7 +1,7 @@
-import React from "react";
-import "./style.css";
+//instructions for the home page for users
+import React from 'react';
 
-function BigText(props) {
+function InstructionUser() {
     return (
         <>
             <div className="card my-2 bg-info text-white">
@@ -27,5 +27,4 @@ function BigText(props) {
         </>
     )
 }
-
-export default BigText;
+export default InstructionUser;
