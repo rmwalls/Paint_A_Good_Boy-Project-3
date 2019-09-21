@@ -1,4 +1,6 @@
 import React from 'react';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import 'react-day-picker/lib/style.css';
 import './style.css';
 
 function ArtistCardFull(props) {
@@ -28,6 +30,11 @@ function ArtistCardFull(props) {
                 <button className='btn btn-primary btn-sm'>
                   Meet With This Artist
                 </button>
+                <DayPickerInput
+                  component={props => <input {...props} />}
+                  placeholder='DD/MM/YYYY'
+                  format='DD/MM/YYYY'
+                />
               </div>
             </div>
           </div>

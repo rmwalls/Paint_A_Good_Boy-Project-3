@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ArtistCardFull from '../../components/ArtistCardFull';
+import 'react-day-picker/lib/style.css';
 import SelectBox from '../../components/SelectBox';
 import axios from 'axios';
 import Footer from '../../components/Footer';
@@ -7,7 +8,8 @@ import Footer from '../../components/Footer';
 class Artists extends Component {
   state = {
     artists: [],
-    career: ''
+    career: '',
+    selectedDay: undefined
   };
 
   componentDidMount() {
