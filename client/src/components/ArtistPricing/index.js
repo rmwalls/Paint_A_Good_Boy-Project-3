@@ -4,16 +4,10 @@ function ArtistPricing() {
     return (
         <div>
            <h1>Pets represent a $90B industry.</h1> 
-           <h2>We Americans love our selfies. But coming in at a close second is how much we love photographs of our pets.</h2>
-            <p>Pet photography is one of the newest pet trends. It takes our love for pet photography and places it in the hands of the professionals. Pet owners want to see their loved companions in the best light.</p>
-            <p>The best pet photographers love animals, have a great sense of style, and can handle pets to get the best results. My step-children are grown and live in another state and another country. So? I get Christmas photos with our dogs every year! There is a lot of opportunity for revenue and income in the pet photography industry. Why not join with us and see your business grow?</p>
-            <p>We have three membership options. <a href="mailto:groovyrlm@gmail.com">Contact Us</a> for more information!</p>
-            <p>Monthly Fee plus:</p>
-            <ul>
-                <li>Fee per lead</li>
-                <li>Fee per booking</li>
-                <li>Fee per click</li>
-            </ul>
+           <h1>That's right. Billion. With a B.</h1>
+           <h2>We love our selfies. But coming in at a close second is how much we love photographs of our pets.</h2>
+            <p>Pet photography is one of the <em>fastest growing pet trends</em>. It takes our love for pet selfies and places it in the hands of professionals, like you. Pet parents want to see their <strong>beloved companions</strong> in the best light. My step-children are grown and live in another state and another country. So? I get Christmas photos taken with our dogs <strong>every year!</strong></p>
+            <p>The best pet photographers <em><strong>love</strong></em> animals, have a great sense of <em>style</em>, and can handle pets to get the best results.  There is a lot of opportunity for revenue and income in the pet photography industry. Why not join with us and see your business grow?</p>
         </div>
     )
 }
