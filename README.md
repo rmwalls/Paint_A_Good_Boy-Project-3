@@ -13,6 +13,7 @@ Technology | Project Team
 "mongojs": "^2.6.0"
 "mongoose": "^5.6.13"
 "morgan": "^1.9.1"
+"moment": "^2.24.0"
 "passport": "^0.4.0"
 "passport-jwt": "^4.0.0"
 "react-image-lightbox": "^5.1.0"
