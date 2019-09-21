@@ -1,5 +1,6 @@
 ////instructions for the home page for artists
 import React from 'react';
+import './style.css';
 
 function InstructionArtist() {
     return (

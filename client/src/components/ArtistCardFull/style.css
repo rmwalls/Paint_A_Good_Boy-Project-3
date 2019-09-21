@@ -1,0 +1,10 @@
+.btn-sm {
+    background-color: #7D8376;
+    border: none;
+}
+.btn-sm:hover {
+    background-color: #796C6F;
+}
+.card-body {
+    background-color: #F6F6F6;
+}
