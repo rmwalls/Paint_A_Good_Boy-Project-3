@@ -53,6 +53,7 @@ if (process.env.NODE_ENV === 'production') {
 // Routes
 app.use('/api/artists', require('./routes/API/artists.js'));
 app.use('/api/users', require('./routes/API/users.js'));
+app.use('/api/appointments', require('./routes/API/appointments.js'));
 
 // Start the API server
 app.listen(PORT, function() {

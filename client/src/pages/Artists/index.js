@@ -8,6 +8,7 @@ class Artists extends Component {
     artists: [],
     career: '',
     userId: localStorage.getItem('userId')
+    selectedDay: undefined
   };
 
   componentDidMount() {
@@ -40,12 +41,12 @@ class Artists extends Component {
         <br></br>
         <br></br>
         <br></br>
-        <div className="row">
-          <div className="col-md-12">
-            <h1 className="text-center">Artist List</h1>
+        <div className='row'>
+          <div className='col-md-12'>
+            <h1 className='text-center'>Artist List</h1>
           </div>
         </div>
-        
+
         {this.state.artists.length ? (
           this.state.artists.map(artist => (
             <div className='container'>
@@ -56,6 +57,7 @@ class Artists extends Component {
                     bioInfo={artist.bioInfo}
                     year={artist.career}
                     pic={artist.artistPhoto}
+                    media={artist.media}
                   />
                 </div>
               </div>

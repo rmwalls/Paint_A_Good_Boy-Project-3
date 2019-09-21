@@ -8,8 +8,7 @@ import { Breakpoint, BreakpointProvider } from 'react-socks';
 import { setDefaultBreakpoints } from 'react-socks';
 
 setDefaultBreakpoints([
-  { s: 0 },
-  { m: 800},
+  { m: 0},
   { l: 1260 }
 ])
 
