@@ -1,10 +1,11 @@
 ////instructions for the home page for artists
 import React from 'react';
+import './style.css';
 
 function InstructionArtist() {
     return (
         <>
-            <div className="card my-2 bg-info text-white">
+            <div className="card my-2 text-white">
                 <div className="card-body">
 
                     <h1 className="display-1 text-black card-text text-left">Do You Love Photographing Pets?</h1>

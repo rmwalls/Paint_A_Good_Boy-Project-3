@@ -4,7 +4,7 @@ import "./style.css";
 function BigText(props) {
     return (
         <>
-            <div className="card my-2 bg-info text-white">
+            <div className="card my-2 text-white">
                 <div className="card-body">
 
                     <h1 className="display-1 text-black card-text text-left">We Love Them Like Our Kids</h1>

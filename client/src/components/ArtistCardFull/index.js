@@ -5,8 +5,11 @@ import Lightbox from '../../components/Lightbox';
 import './style.css';
 
 function ArtistCardFull(props) {
+
+    console.log(props);
+
   return (
-    <div className='card mb-3'>
+    <div className='card bg-light mb-3'>
       <div className='row no-gutters'>
         <div className='col-md-2'>
           <img
@@ -22,9 +25,8 @@ function ArtistCardFull(props) {
             <h5 className='card-title'>{props.name}</h5>
             <p className='card-text'>{props.bioInfo}</p>
             <p className='card-text'></p>
-            <div className='d-flex'>
-              <div className='justify-content-start'>
-                <button className='btn btn-primary btn-sm'>
+              <div className='d-inline-flex'>
+                <button className='btn btn-primary btn-sm mr-1'>
                   Meet With This Artist
                 </button>
                 <DayPickerInput
@@ -32,12 +34,11 @@ function ArtistCardFull(props) {
                   placeholder='DD/MM/YYYY'
                   format='DD/MM/YYYY'
                 />
-                <Lightbox></Lightbox>
+                <Lightbox media={props.media}></Lightbox>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }

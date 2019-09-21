@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import Lightbox from 'react-image-lightbox';
+import LightboxImage from 'react-image-lightbox';
 import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
  
-const images = [
-  '//placekitten.com/1500/500',
-  '//placekitten.com/4000/3000',
-  '//placekitten.com/800/1200',
-  '//placekitten.com/1500/1500',
-];
+
  
 export default class LightboxExample extends Component {
   constructor(props) {
@@ -16,11 +11,20 @@ export default class LightboxExample extends Component {
     this.state = {
       photoIndex: 0,
       isOpen: false,
+      tempProps: props
     };
   }
- 
+  componentDidMount() {
+    console.log(this.state.tempProps)
+  }
   render() {
     const { photoIndex, isOpen } = this.state;
+    const images = [
+      this.state.tempProps.media[0],
+      this.state.tempProps.media[1],
+      this.state.tempProps.media[2],
+      this.state.tempProps.media[3],
+    ];
  
     return (
       <div>
@@ -29,7 +33,7 @@ export default class LightboxExample extends Component {
         </button>
  
         {isOpen && (
-          <Lightbox
+          <LightboxImage
             mainSrc={images[photoIndex]}
             nextSrc={images[(photoIndex + 1) % images.length]}
             prevSrc={images[(photoIndex + images.length - 1) % images.length]}
