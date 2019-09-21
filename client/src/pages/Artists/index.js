@@ -6,11 +6,13 @@ import Footer from '../../components/Footer';
 class Artists extends Component {
   state = {
     artists: [],
-    career: ''
+    career: '',
+    userId: localStorage.getItem('userId')
   };
 
   componentDidMount() {
     this.loadAllArtists();
+    console.log("this is the muthafkn userID!: " + this.state.userId);
   }
 
   setCareer = career => {

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Switch, Route, withRouter } from "react-router-dom";
+import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Home from '../../pages/Home';
@@ -9,7 +9,19 @@ import Register from '../../pages/Register';
 import Login from '../../pages/Login';
 import Pricing from '../../pages/Pricing';
 
-function ContainerMain({ location }) {
+
+
+function ContainerMain({ location, updateLoginState, loggedIn }) {
+
+    const PrivateRoute = ({ component: Component, ...rest}) => (
+        <Route {...rest} render= {(props) => (
+            loggedIn
+            ? <Component {...props} />
+            : <Redirect to='/login' />
+            )}
+        />
+    )
+
   return (
     <Wrapper>
         <TransitionGroup>
@@ -21,10 +33,13 @@ function ContainerMain({ location }) {
                 <section className="route-section">
                     <Switch location={location}>
                         <Route exact path='/' component={Home} />
-                        <Route exact path='/artists' component={Artists} />
-                        <Route exact path='/login' component={Login} />
+                        <PrivateRoute exact path='/artists' component={Artists} />
+                        <Route exact path='/login' render= {
+                            (props) => 
+                            <Login updateLoginState={updateLoginState} {...props} />
+                        } />
                         <Route exact path='/register' component={Register} />
-                        <Route exact path='/pricing' component={Pricing} />
+                        <PrivateRoute exact path='/pricing' component={Pricing} />
                     </Switch>
                 </section>
             </CSSTransition>
