@@ -55,6 +55,7 @@ class Artists extends Component {
                     bioInfo={artist.bioInfo}
                     year={artist.career}
                     pic={artist.artistPhoto}
+                    media={artist.media}
                   />
                 </div>
               </div>
