@@ -7,7 +7,7 @@ var jwt = require('jsonwebtoken');
 var router = express.Router();
 var User = require('../../models/User');
 
-router.post('/register', function(req, res) {
+router.post('/register', function (req, res) {
   if (!req.body.email || !req.body.password) {
     res.json({
       success: false,
@@ -23,7 +23,7 @@ router.post('/register', function(req, res) {
     console.log(req.body.email);
 
     // save the user
-    newUser.save(function(err) {
+    newUser.save(function (err) {
       console.log('saving the user...');
       if (err) {
         return res.json({ success: false, msg: err });
@@ -32,7 +32,7 @@ router.post('/register', function(req, res) {
         // messages on login/register
         // return res.json({ success: false, msg: err });
       }
-      newUser.comparePassword(req.body.password, function() {
+      newUser.comparePassword(req.body.password, function () {
         var token = jwt.sign(newUser.toJSON(), settings.secret);
         // return the information including token as JSON
         res.json({
@@ -45,12 +45,12 @@ router.post('/register', function(req, res) {
   }
 });
 
-router.post('/login', function(req, res) {
+router.post('/login', function (req, res) {
   User.findOne(
     {
       email: req.body.email
     },
-    function(err, user) {
+    function (err, user) {
       if (err) throw err;
       console.log(req.body.email);
       if (!user) {
@@ -60,7 +60,7 @@ router.post('/login', function(req, res) {
         });
       } else {
         // check if password matches
-        user.comparePassword(req.body.password, function(err, isMatch) {
+        user.comparePassword(req.body.password, function (err, isMatch) {
           if (isMatch && !err) {
             // if user is found and password is right create a token
             var token = jwt.sign(user.toJSON(), settings.secret);
@@ -79,5 +79,4 @@ router.post('/login', function(req, res) {
     }
   );
 });
-
 module.exports = router;

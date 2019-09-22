@@ -64,12 +64,11 @@ class Artists extends Component {
             </div>
           ))
         ) : (
-          <h3>No Results to Display</h3>
-        )}
+            <h3>No Results to Display</h3>
+          )}
         <Footer sticky-bottom='sticky-bottom' />
       </>
     );
   }
 }
-
 export default Artists;

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const Artist = require('../../models/Artist');
 
 // @route    GET api/artists
@@ -42,5 +41,4 @@ router.post('/', (req, res) => {
       res.json(err);
     });
 });
-
 module.exports = router;
