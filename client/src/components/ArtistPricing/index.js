@@ -3,7 +3,8 @@ import React from "react";
 function ArtistPricing() {
     return (
         <div>
-           <h1>Pets represent a $90B industry.</h1> 
+            <img src="../../img/other/prints2.png" alt="paw prints" align="right" width="25%"></img>
+           <h1>Pets represent an $80B industry.</h1> 
            <h1>That's right. Billion. With a B.</h1>
            <h2>We love our selfies. But coming in at a close second is how much we love photographs of our pets.</h2>
             <p>Pet photography is one of the <em>fastest growing pet trends</em>. It takes our love for pet selfies and places it in the hands of professionals, like you. Pet parents want to see their <strong>beloved companions</strong> in the best light. My step-children are grown and live in another state and another country. So? I get Christmas photos taken with our dogs <strong>every year!</strong></p>
