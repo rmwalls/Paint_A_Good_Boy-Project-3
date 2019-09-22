@@ -25,7 +25,7 @@ function Pricing() {
                         <img src="../../img/other/prints2.png" alt="paw prints" align="right" width="40%"></img>
                     </Col>
                     <Col size='md-6'>
-                    <img src="../../img/other/prints.png" alt="paw prints" align="right" width="50%"></img>
+                        <img src="../../img/other/prints.png" alt="paw prints" align="right" width="50%"></img>
                         <p>Monthly Fee plus:</p>
                         <ol>
                             <li>Fee per lead</li>
@@ -49,7 +49,7 @@ function Pricing() {
                     </Col>
                 </Row>
             </Container>
-                <Footer sticky-bottom='sticky-bottom' />
+            <Footer sticky-bottom='sticky-bottom' />
         </>
     )
 }

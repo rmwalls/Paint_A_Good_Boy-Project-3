@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const path = require('path');
 const logger = require('morgan');
 require('dotenv').config();
-
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -56,6 +55,6 @@ app.use('/api/users', require('./routes/API/users.js'));
 app.use('/api/appointments', require('./routes/API/appointments.js'));
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });

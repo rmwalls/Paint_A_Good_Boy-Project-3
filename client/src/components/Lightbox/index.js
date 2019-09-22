@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import LightboxImage from 'react-image-lightbox';
 import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
- 
 
- 
 export default class LightboxExample extends Component {
   constructor(props) {
     super(props);
- 
+
     this.state = {
       photoIndex: 0,
       isOpen: false,
@@ -25,13 +23,13 @@ export default class LightboxExample extends Component {
       this.state.tempProps.media[2],
       this.state.tempProps.media[3],
     ];
- 
+
     return (
       <div>
         <button className="btn btn-secondary btn-sm" onClick={() => this.setState({ isOpen: true })}>
           View Their Work
         </button>
- 
+
         {isOpen && (
           <LightboxImage
             mainSrc={images[photoIndex]}

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const User = require('../../models/User');
 const Artist = require('../../models/Artist');
 const Appointment = require('../../models/Appointment');
@@ -35,5 +34,4 @@ router.get('/:id', (req, res) => {
     res.send(appointment);
   });
 });
-
 module.exports = router;

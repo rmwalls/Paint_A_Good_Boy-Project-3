@@ -2,50 +2,45 @@ import React from "react";
 import styled from "styled-components";
 import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-
 import Home from '../../pages/Home';
 import Artists from '../../pages/Artists';
 import Register from '../../pages/Register';
 import Login from '../../pages/Login';
 import Pricing from '../../pages/Pricing';
 
-
-
 function ContainerMain({ location, updateLoginState, loggedIn }) {
-
-    const PrivateRoute = ({ component: Component, ...rest}) => (
-        <Route {...rest} render= {(props) => (
+    const PrivateRoute = ({ component: Component, ...rest }) => (
+        <Route {...rest} render={(props) => (
             loggedIn
-            ? <Component {...props} />
-            : <Redirect to='/login' />
-            )}
+                ? <Component {...props} />
+                : <Redirect to='/login' />
+        )}
         />
     )
-
-  return (
-    <Wrapper>
-        <TransitionGroup>
-            <CSSTransition 
-                key={location.key} 
-                timeout= {{ enter: 300, exit: 300}}
-                classNames={`fade`}
-            >
-                <section className="route-section">
-                    <Switch location={location}>
-                        <Route exact path='/' component={Home} />
-                        <PrivateRoute exact path='/artists' component={Artists} />
-                        <Route exact path='/login' render= {
-                            (props) => 
-                            <Login updateLoginState={updateLoginState} {...props} />
-                        } />
-                        <Route exact path='/register' component={Register} />
-                        <PrivateRoute exact path='/pricing' component={Pricing} />
-                    </Switch>
-                </section>
-            </CSSTransition>
-        </TransitionGroup>
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <TransitionGroup>
+                <CSSTransition
+                    key={location.key}
+                    timeout={{ enter: 300, exit: 300 }}
+                    classNames={`fade`}
+                >
+                    <section className="route-section">
+                        <Switch location={location}>
+                            <Route exact path='/' component={Home} />
+                            <PrivateRoute exact path='/artists' component={Artists} />
+                            <Route exact path='/login' render={
+                                (props) =>
+                                    <Login updateLoginState={updateLoginState} {...props} />
+                            } />
+                            <Route exact path='/register' component={Register} />
+                            <PrivateRoute exact path='/pricing' component={Pricing} />
+                        </Switch>
+                    </section>
+                </CSSTransition>
+            </TransitionGroup>
+        </Wrapper>
+    );
 }
 
 const Wrapper = styled.div`
@@ -76,5 +71,4 @@ const Wrapper = styled.div`
      left: 0;
    }
 `;
-
 export default withRouter(ContainerMain);
