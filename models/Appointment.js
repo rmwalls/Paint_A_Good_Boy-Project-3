@@ -1,14 +1,12 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
-
-const AppointmentSchema = new Schema({
+const AppointmentSchema = new mongoose.Schema({
   user: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
   artist: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Artist'
   },
   date: {
@@ -16,4 +14,6 @@ const AppointmentSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Appointments', AppointmentSchema);
+const Appointment = mongoose.model('appointment', AppointmentSchema);
+
+module.exports = Appointment;

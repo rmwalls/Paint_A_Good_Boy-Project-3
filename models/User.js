@@ -30,9 +30,16 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  appointments: {
-    type: Date
-  }
+  appointments: [
+    {
+      artist: {
+        type: String
+      },
+      date: {
+        type: Date
+      }
+    }
+  ]
 });
 
 UserSchema.pre('save', function(next) {
@@ -65,7 +72,7 @@ UserSchema.methods.comparePassword = function(passw, cb) {
 };
 
 // This creates our model from the above schema, using mongoose's model method
-var User = mongoose.models.User || mongoose.model('User', UserSchema);
+var User = mongoose.models.User || mongoose.model('user', UserSchema);
 
 // Export the User model
 module.exports = User;

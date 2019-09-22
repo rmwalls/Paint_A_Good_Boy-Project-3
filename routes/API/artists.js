@@ -16,6 +16,21 @@ router.get('/', (req, res) => {
     });
 });
 
+// @route    GET api/artists/:id
+// @desc     Get artist info by id
+// @access   Public
+router.get('/:id', (req, res) => {
+  Artist.findById({
+    _id: req.body._id
+  })
+    .then(artist => {
+      res.json(artist);
+    })
+    .catch(err => {
+      resjson(err);
+    });
+});
+
 // @route    GET api/artists/:career
 // @desc     Get artist info by their profession
 // @access   Public

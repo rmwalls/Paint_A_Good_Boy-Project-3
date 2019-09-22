@@ -4,16 +4,40 @@ import axios from 'axios';
 import Footer from '../../components/Footer';
 
 class Artists extends Component {
-  state = {
-    artists: [],
-    career: '',
-    userId: localStorage.getItem('userId'),
-    selectedDay: undefined
-  };
+  constructor() {
+    super();
+    this.state = {
+      artists: [],
+      career: '',
+      userId: localStorage.getItem('userId'),
+      artistId: '',
+      selectedDate: 'today'
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
 
   componentDidMount() {
     this.loadAllArtists();
+  }
+
+  handleClick(e) {
+    e.preventDefault();
     console.log('this is the muthafkn userID!: ' + this.state.userId);
+    let userId = this.state.userId;
+    let selectedDate = this.state.selectedDate;
+
+    axios.get('/api/artists/:id').then(res => {
+      console.log(res);
+      const appointment = {
+        user: userId,
+        artist: 'an artist',
+        date: selectedDate
+      };
+      axios
+        .post('/api/appointments', appointment)
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+    });
   }
 
   setCareer = career => {
@@ -23,7 +47,7 @@ class Artists extends Component {
   loadAllArtists = () => {
     axios
       .get(`/api/artists/`)
-      .then(res => console.log(res) || this.setState({ artists: res.data }))
+      .then(res => this.setState({ artists: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -53,11 +77,13 @@ class Artists extends Component {
               <div className='row'>
                 <div className='col-md-12'>
                   <ArtistCardFull
+                    key={artist._id}
                     name={artist.name}
                     bioInfo={artist.bioInfo}
                     year={artist.career}
                     pic={artist.artistPhoto}
                     media={artist.media}
+                    onClick={this.handleClick}
                   />
                 </div>
               </div>

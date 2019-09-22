@@ -8,12 +8,17 @@ const Appointment = require('../../models/Appointment');
 // @route    POST api/appointments
 // @desc     Create a new appointment
 // @access   Private
-router.post('/', (req, res) => {
-  const newAppointment = new Appointment({
-    user: User._id,
-    artist: Artist._id,
+router.post('/', async (req, res) => {
+  const newAppointment = await Appointment.create({
+    user: req.user._id,
+    artist: req.artist._id,
     date: req.body.date
-  });
+  }).catch(err => console.error(err));
+
+  // const newAppointment = new Appointment({
+  //   user: req.user._id,
+  //   artist: req.artist._id,
+  //   date: req.body.date
 
   newAppointment.save((err, appointment) => {
     if (err) {
