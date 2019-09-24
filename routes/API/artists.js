@@ -20,14 +20,14 @@ router.get('/', (req, res) => {
 // @desc     Get artist info by id
 // @access   Public
 router.get('/:id', (req, res) => {
-  Artist.findById({
-    _id: req.body._id
-  })
+  console.log('artist id: ' + req.params.id);
+  const artistId = req.params.id;
+  Artist.findById(artistId, { _id: artistId })
     .then(artist => {
       res.json(artist);
     })
     .catch(err => {
-      resjson(err);
+      res.json(err);
     });
 });
 

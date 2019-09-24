@@ -38,7 +38,7 @@ const ArtistSchema = new Schema({
 });
 
 // This creates the model from the above schema, using mongoose's model method
-var Artist = mongoose.model('artist', ArtistSchema);
+var Artist = mongoose.model('Artist', ArtistSchema);
 
 // Export the Artist model
 module.exports = Artist;

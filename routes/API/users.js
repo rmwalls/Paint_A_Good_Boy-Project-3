@@ -67,7 +67,11 @@ router.post('/login', function(req, res) {
             var decodedToken = jwt.decode(token);
             console.log(decodedToken);
             // return the information including token as JSON
-            res.json({ success: true, token: 'JWT ' + token, decodedToken: decodedToken });
+            res.json({
+              success: true,
+              token: 'JWT ' + token,
+              decodedToken: decodedToken
+            });
           } else {
             res.status(401).send({
               success: false,
@@ -75,6 +79,26 @@ router.post('/login', function(req, res) {
             });
           }
         });
+      }
+    }
+  );
+});
+
+router.post('/appointments/:id', (req, res) => {
+  const userId = req.params.id;
+  User.findOneAndUpdate(
+    userId,
+    {
+      appointments: {
+        artist: req.body.artist,
+        date: req.body.date
+      }
+    },
+    function(err, appointment) {
+      if (err) throw err;
+      console.log('adding appointment: ' + appointment);
+      if (appointment) {
+        res.json(appointment);
       }
     }
   );

@@ -10,8 +10,8 @@ const Appointment = require('../../models/Appointment');
 // @access   Private
 router.post('/', async (req, res) => {
   const newAppointment = await Appointment.create({
-    user: req.user._id,
-    artist: req.artist._id,
+    user: User._id,
+    artist: Artist._id,
     date: req.body.date
   }).catch(err => console.error(err));
 

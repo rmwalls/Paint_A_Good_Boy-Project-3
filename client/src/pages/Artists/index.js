@@ -8,7 +8,7 @@ class Artists extends Component {
     super();
     this.state = {
       artists: [],
-      career: '',
+      // career: '',
       userId: localStorage.getItem('userId'),
       artistId: '',
       selectedDate: 'today'
@@ -22,27 +22,28 @@ class Artists extends Component {
 
   handleClick(e) {
     e.preventDefault();
-    console.log('this is the muthafkn userID!: ' + this.state.userId);
+    console.log('this is the current userID!: ' + this.state.userId);
+    let selectedArtistId = this.state.ArtistId;
     let userId = this.state.userId;
     let selectedDate = this.state.selectedDate;
 
-    axios.get('/api/artists/:id').then(res => {
-      console.log(res);
-      const appointment = {
-        user: userId,
-        artist: 'an artist',
+    axios.get(`/api/artists/${selectedArtistId}`).then(res => {
+      console.log('selected artist: ' + res.data.name);
+      let thisUser = userId;
+      let appointment = {
+        artist: res.data.name,
         date: selectedDate
       };
       axios
-        .post('/api/appointments', appointment)
+        .post(`/api/users/appointments/${thisUser}`, appointment)
         .then(res => console.log(res))
         .catch(err => console.log(err));
     });
   }
 
-  setCareer = career => {
-    this.setState({ career: career }, this.loadArtistsByCareer);
-  };
+  // setCareer = career => {
+  //   this.setState({ career: career }, this.loadArtistsByCareer);
+  // };
 
   loadAllArtists = () => {
     axios
@@ -51,12 +52,12 @@ class Artists extends Component {
       .catch(err => console.log(err));
   };
 
-  loadArtistsByCareer = () => {
-    axios
-      .get(`/api/artists/${this.state.career.value}`)
-      .then(res => console.log(res) || this.setState({ artists: res.data }))
-      .catch(err => console.log(err));
-  };
+  // loadArtistsByCareer = () => {
+  //   axios
+  //     .get(`/api/artists/${this.state.career.value}`)
+  //     .then(res => console.log(res) || this.setState({ artists: res.data }))
+  //     .catch(err => console.log(err));
+  // };
 
   render() {
     return (

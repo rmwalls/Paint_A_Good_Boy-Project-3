@@ -5,7 +5,7 @@ import Lightbox from '../../components/Lightbox';
 import './style.css';
 
 function ArtistCardFull(props) {
-  console.log(props);
+  // console.log(props);
 
   return (
     <div className='card bg-light mb-3'>
@@ -33,7 +33,7 @@ function ArtistCardFull(props) {
               </button>
               <DayPickerInput
                 component={props => <input {...props} />}
-                placeholder='DD/MM/YYYY'
+                placeholder='Select a day to meet!'
                 format='DD/MM/YYYY'
               />
               <Lightbox media={props.media}></Lightbox>
