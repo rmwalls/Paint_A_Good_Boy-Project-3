@@ -52,14 +52,14 @@ function Home() {
                 <div className="my-4">
                   <h1 className="display-3 card-title text-center">Give Them The Attention</h1>
                   <h1 className="display-1 card-title text-center">They Deserve</h1>
-                  <Link to="/artists" className='btn btn-lg btn-info'>Set An Appointment Today</Link>
+                  <Link to='/artists' className='btn btn-block btn-lg btn-info' role="button">Set An Appointment Today</Link>
                 </div>
                 <div className="jumbotron text-dark">
                   <p className="lead">We specialize in finding the perfect arist for your furry friends no matter the occassion</p>
                   <p className="lead"><strong>Painters | Photographers | Film Makers</strong></p>
                   <hr className="my-4"></hr>
                   <p>Browse our collection, there's a unique style for anyone</p>
-                  <Link to='/artist' className="btn btn-primary btn-lg" role="button">Learn more</Link>
+                  <Link to='/artists' className="btn btn-primary btn-lg" role="button">Learn more</Link>
                 </div>
               </div>
             </div>
