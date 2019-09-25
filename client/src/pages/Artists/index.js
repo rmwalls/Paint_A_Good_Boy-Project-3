@@ -13,32 +13,34 @@ class Artists extends Component {
       artistId: '',
       selectedDate: 'today'
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.selectArtist = this.selectArtist.bind(this);
   }
 
   componentDidMount() {
     this.loadAllArtists();
   }
 
-  handleClick(e) {
-    e.preventDefault();
-    console.log('this is the current userID!: ' + this.state.userId);
-    let selectedArtistId = this.state.ArtistId;
-    let userId = this.state.userId;
-    let selectedDate = this.state.selectedDate;
-
-    axios.get(`/api/artists/${selectedArtistId}`).then(res => {
-      console.log('selected artist: ' + res.data.name);
-      let thisUser = userId;
-      let appointment = {
-        artist: res.data.name,
-        date: selectedDate
-      };
-      axios
-        .post(`/api/users/appointments/${thisUser}`, appointment)
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
-    });
+  selectArtist(id) {
+    axios
+      .post('/api/appointments', {
+        artist: id,
+        user: this.state.userId,
+        date: this.state.selectedDate
+      })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+    // axios.get(`/api/artists/${id}`).then(res => {
+    //   console.log('selected artist: ' + res.data.name);
+    //   let thisUser = this.state.userId;
+    //   let appointment = {
+    //     artist: res.data.name,
+    //     date: this.state.selectedDate
+    //   };
+    //   axios
+    //     .post(`/api/users/appointments/${thisUser}`, appointment)
+    //     .then(res => console.log(res))
+    //     .catch(err => console.log(err));
+    // });
   }
 
   // setCareer = career => {
@@ -84,7 +86,10 @@ class Artists extends Component {
                     year={artist.career}
                     pic={artist.artistPhoto}
                     media={artist.media}
-                    onClick={this.handleClick}
+                    onClick={e => {
+                      e.preventDefault();
+                      this.selectArtist(artist._id);
+                    }}
                   />
                 </div>
               </div>

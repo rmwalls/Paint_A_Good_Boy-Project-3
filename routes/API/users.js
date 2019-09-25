@@ -84,24 +84,4 @@ router.post('/login', function(req, res) {
   );
 });
 
-router.post('/appointments/:id', (req, res) => {
-  const userId = req.params.id;
-  User.findOneAndUpdate(
-    userId,
-    {
-      appointments: {
-        artist: req.body.artist,
-        date: req.body.date
-      }
-    },
-    function(err, appointment) {
-      if (err) throw err;
-      console.log('adding appointment: ' + appointment);
-      if (appointment) {
-        res.json(appointment);
-      }
-    }
-  );
-});
-
 module.exports = router;

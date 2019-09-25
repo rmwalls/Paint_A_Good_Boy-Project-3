@@ -9,10 +9,12 @@ const Appointment = require('../../models/Appointment');
 // @desc     Create a new appointment
 // @access   Private
 router.post('/', async (req, res) => {
+  const { user, artist, date } = req.body;
+
   const newAppointment = await Appointment.create({
-    user: User._id,
-    artist: Artist._id,
-    date: req.body.date
+    user,
+    artist,
+    date
   }).catch(err => console.error(err));
 
   // const newAppointment = new Appointment({
@@ -38,6 +40,14 @@ router.get('/:id', (req, res) => {
   Appointment.findById({ id: _id }, (err, appointment) => {
     if (err) throw err;
     res.send(appointment);
+  });
+});
+
+// Get appointments by User
+router.get('/:userId', (req, res) => {
+  const userId = req.params.userId;
+  Appointment.findAll({ id: userId }).then(appointment => {
+    res.json(appointment).catch(err => console.log(err));
   });
 });
 
