@@ -26,7 +26,7 @@ class ArtistCard extends Component {
                     {   //map over the images array and display each in a grid cell. When one is clicked, handle it
                         this.state.data.map(item => (
                             <div className="grid-item">
-                                <img src={item.image} width="150px" height="150px" id={item.id} alt="artist pic" onClick={() => this.handleButtonClicks(item.id)} />
+                                <img src={item.image} className="rounded" width="150px" height="150px" id={item.id} alt="artist pic" onClick={() => this.handleButtonClicks(item.id)} />
                             </div>
                         ))
                     }
