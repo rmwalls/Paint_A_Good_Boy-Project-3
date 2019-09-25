@@ -64,13 +64,14 @@ function Home() {
             </div>
           </div>
         </div>
+        <br></br>
       </Breakpoint>
 
       <Container className='under-splash'>
         <Row>
           <Col size='md-12'>
-            <h1 className='display-2 text-dark text-center my-2'>
-              Paint A Good Boy
+            <h1 className='display-2 text-dark text-center my-2'><strong>
+              Paint A Good Boy</strong>
             </h1>
             <Breakpoint l only>
               <h1 className=' text-dark text-center'>Meet Our Artists</h1>
@@ -104,7 +105,12 @@ function Home() {
         </Container>
       </Breakpoint>
       <Breakpoint m only>
-        <BigText></BigText>
+        <br></br>
+        <div className="row">
+          <div className="col-md-12">
+              <InstructionArtist />
+          </div>
+        </div>
       </Breakpoint>
       <Breakpoint l only>
         <Footer />
