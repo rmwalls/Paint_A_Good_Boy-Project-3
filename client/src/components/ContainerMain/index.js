@@ -39,7 +39,11 @@ function ContainerMain({ location, updateLoginState, loggedIn }) {
                   <Login updateLoginState={updateLoginState} {...props} />
                 )}
               />
-              <Route exact path='/appointments' component={Appointments} />
+              <PrivateRoute
+                exact
+                path='/appointments'
+                component={Appointments}
+              />
               <Route exact path='/register' component={Register} />
               <PrivateRoute exact path='/pricing' component={Pricing} />
             </Switch>
