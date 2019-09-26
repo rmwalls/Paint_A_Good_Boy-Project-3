@@ -1,7 +1,7 @@
 # PRECIOUS PETS/PAINT A GOOD BOY
 
 * This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-* Deployed to Heroku --> <https://nameless-reef-65979.herokuapp.com/>
+* Deployed to Heroku --> <https://paint-a-good-boy.herokuapp.com/>
 * Project Team --> Lucas Martins, Mike McGuire, Stephen Rogers, Robbi Walls
 
 Server Technology | Client Technoloty
