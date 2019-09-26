@@ -30,9 +30,12 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  appointments: {
-    type: Date
-  }
+  appointments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Appointment'
+    }
+  ]
 });
 
 UserSchema.pre('save', function(next) {

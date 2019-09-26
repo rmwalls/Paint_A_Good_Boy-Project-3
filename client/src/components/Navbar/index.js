@@ -12,12 +12,12 @@ class Navbar extends React.Component {
     localStorage.removeItem('userId');
     this.props.updateLoginState(false);
     window.location.reload();
-  }
+  };
 
   // showProtectedRoutes = () => {
   //   if(localStorage.getItem("jwtToken") === null) {
   //     console.log("testing navbar items");
-  //     return ( 
+  //     return (
   //   }
   // }
 
@@ -29,11 +29,11 @@ class Navbar extends React.Component {
           style={{ width: '45px', height: '50px' }}
           className='navbar-brand'
           href='#'
-          alt=""
+          alt=''
         ></img>
         <Link to='/' className='navbar-brand text-light'>
           Paint A Good Boy
-      </Link>
+        </Link>
         <button
           className='navbar-toggler'
           type='button'
@@ -43,7 +43,7 @@ class Navbar extends React.Component {
           aria-expanded='false'
           aria-label='Toggle navigation'
         >
-        <span className='navbar-toggler-icon'></span>
+          <span className='navbar-toggler-icon'></span>
         </button>
         <div className='collapse navbar-collapse' id='navbarNav'>
           <ul className='navbar-nav mx-auto'>
@@ -55,27 +55,38 @@ class Navbar extends React.Component {
             <li className='nav-item' style={{ width: '150px' }}>
               <Link to='/artists' className='nav-link text-light'>
                 Artists
-            </Link>
+              </Link>
             </li>
-            <li className='nav-item' style={{ width: '150px' }}>
-              <Link to='/pricing' className='nav-link text-light'>
-                Pricing
-            </Link>
-            </li>
-            {
-              this.props.loggedIn ?
-                <li className='nav-item' style={{ width: '150px' }}>
-                  <Link to='/' className='nav-link text-light' onClick={this.logout}>
-                    Log Out
+            {this.props.loggedIn ? (
+              <li className='nav-item' style={{ width: '150px' }}>
+                <Link to='/appointments' className='nav-link text-light'>
+                  Appointments
                 </Link>
-                </li>
-                :
-                <li className='nav-item' style={{ width: '150px' }}>
-                  <Link to='/login' className='nav-link text-light'>
-                    Log In
-                  </Link>
-                </li>
-            }
+              </li>
+            ) : (
+              <li className='nav-item' style={{ width: '150px' }}>
+                <Link to='/pricing' className='nav-link text-light'>
+                  Pricing
+                </Link>
+              </li>
+            )}
+            {this.props.loggedIn ? (
+              <li className='nav-item' style={{ width: '150px' }}>
+                <Link
+                  to='/'
+                  className='nav-link text-light'
+                  onClick={this.logout}
+                >
+                  Log Out
+                </Link>
+              </li>
+            ) : (
+              <li className='nav-item' style={{ width: '150px' }}>
+                <Link to='/login' className='nav-link text-light'>
+                  Log In
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

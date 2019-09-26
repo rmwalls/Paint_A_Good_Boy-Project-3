@@ -20,11 +20,13 @@ app.use(express.json());
 // })
 
 // Connect to the Mongo DB
-const url = process.env.MONGODB_URI || 'mongodb://localhost/petapp';
-console.log('Connecting to db');
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/petapp';
+console.log('Connecting to db...');
 mongoose.connect(url, {
   useNewUrlParser: true,
-  useCreateIndex: true
+  useCreateIndex: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
 
 const db = mongoose.connection;

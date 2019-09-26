@@ -66,7 +66,9 @@ function Home() {
             </div>
           </div>
         </div>
+
         <br></br>
+
       </Breakpoint>
 
       <Container className='under-splash'>
