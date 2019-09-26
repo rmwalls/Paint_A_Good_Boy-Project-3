@@ -1,4 +1,4 @@
-//Pricing page - for artists
+//Pricing page - for artists, not users
 import React from "react";
 import Footer from "../../components/Footer";
 import ArtistPricing from "../../components/ArtistPricing";
@@ -22,7 +22,10 @@ function Pricing() {
                 <Row>
                     <Col size='md-6'>
                         <p>We have three membership options. <a href="mailto:groovyrlm@gmail.com">Contact Us</a> for more information on what we provide! Our success is interlinked with yours!</p>
-                        <img src="../../img/other/prints2.png" alt="paw prints" align="right" width="40%"></img>
+                        <div id="cf">
+                            <img class="bottom" src="../../img/other/prints2.png" alt="paw prints" align="right" width="100%"></img>
+                            <img class="top" src="../../img/other/prints3.png" alt="paw prints" align="right" width="100%"></img>
+                        </div>
                     </Col>
                     <Col size='md-6'>
                         <img src="../../img/other/prints.png" alt="paw prints" align="right" width="50%"></img>

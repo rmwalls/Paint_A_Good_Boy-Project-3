@@ -7,7 +7,7 @@ import Col from '../../components/Col';
 //import Cal from '../../components/Cal'; this isn't being called
 import ImageGallery from '../../components/ImageGallery';
 import BigTile from '../../components/BigTile';
-import BigText from '../../components/BigText';
+//import BigText from '../../components/BigText';
 import InstructionUser from '../../components/InstructionUser';
 import InstructionArtist from '../../components/InstructionArtist';
 import CatImage from '../../kitty.jpg';
@@ -56,7 +56,7 @@ function Home() {
                   <Link to='/artists' className='btn btn-block btn-lg btn-info' role="button">Set An Appointment Today</Link>
                 </div>
                 <div className="jumbotron text-dark">
-                  <p className="lead">We specialize in finding the perfect arist for your furry friends no matter the occassion</p>
+                  <p className="lead">We specialize in finding the perfect arist for your furry friends no matter the occasion</p>
                   <p className="lead"><strong>Painters | Photographers | Film Makers</strong></p>
                   <hr className="my-4"></hr>
                   <p>Browse our collection, there's a unique style for anyone</p>
