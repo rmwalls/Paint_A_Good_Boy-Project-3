@@ -6,10 +6,7 @@ import ContainerMain from './components/ContainerMain';
 import { Breakpoint, BreakpointProvider } from 'react-socks';
 import { setDefaultBreakpoints } from 'react-socks';
 
-setDefaultBreakpoints([
-  { m: 0},
-  { l: 1260 }
-])
+setDefaultBreakpoints([{ m: 0 }, { l: 1260 }]);
 
 // if(localStorage.getItem("jwtToken") === null) {
 
@@ -19,24 +16,32 @@ setDefaultBreakpoints([
 
 class App extends React.Component {
   state = {
-    loggedIn : Boolean(localStorage.getItem("jwtToken")),
-    userId : localStorage.getItem('userId')
-  }
-  updateLoginState = (bool) => {
-    this.setState({loggedIn: bool})
-  }
+    loggedIn: Boolean(localStorage.getItem('jwtToken')),
+    userId: localStorage.getItem('userId')
+  };
+
+  updateLoginState = bool => {
+    this.setState({ loggedIn: bool });
+  };
 
   render() {
     return (
       <BreakpointProvider>
         <Router>
           <div>
-            <Navbar loggedIn={this.state.loggedIn} updateLoginState={this.updateLoginState} />
-            <ContainerMain loggedIn={this.state.loggedIn} updateLoginState={this.updateLoginState} userId={this.state.userId}/>
-          </div>  
+            <Navbar
+              loggedIn={this.state.loggedIn}
+              updateLoginState={this.updateLoginState}
+            />
+            <ContainerMain
+              loggedIn={this.state.loggedIn}
+              updateLoginState={this.updateLoginState}
+              userId={this.state.userId}
+            />
+          </div>
         </Router>
       </BreakpointProvider>
-    )
+    );
   }
 }
 export default App;
