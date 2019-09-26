@@ -69,5 +69,4 @@ class SelectBox extends React.Component {
     );
   }
 }
-
 export default SelectBox;

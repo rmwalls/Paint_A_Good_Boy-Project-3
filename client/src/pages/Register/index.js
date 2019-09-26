@@ -25,7 +25,7 @@ class Create extends Component {
 
     axios.post('/api/users/register', { email, password }).then(result => {
       localStorage.setItem('jwtToken', result.data.token);
-      this.props.history.push('/');
+      this.props.history.push('/login');
     });
   };
 
@@ -71,5 +71,4 @@ class Create extends Component {
     );
   }
 }
-
 export default Create;

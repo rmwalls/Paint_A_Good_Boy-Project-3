@@ -30,6 +30,7 @@ function ArtistCardFull(props) {
                 {props.buttonText}
               </button>
 
+
               <Lightbox media={props.media}></Lightbox>
             </div>
           </div>
@@ -38,5 +39,4 @@ function ArtistCardFull(props) {
     </div>
   );
 }
-
 export default ArtistCardFull;

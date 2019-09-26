@@ -34,9 +34,10 @@ function Home() {
                 </div>
               </Col>
               <div className='col-md-6 d-flex my-5'>
-                <Link to='/artists' className='btn btn-block btn-lg btn-info'>
+                {/* <button className='btn btn-block btn-lg btn-info'>
                   Set An Appointment Today
-                </Link>
+                </button> */}
+                <Link to='/artists' className='btn btn-block btn-lg btn-info' role="button">Set An Appointment Today</Link>
               </div>
             </Row>
           </Container>
@@ -44,56 +45,37 @@ function Home() {
       </Breakpoint>
       <br></br>
       <Breakpoint m only>
-        <div className='row'>
-          <div className='col-md-12'>
-            <div className='card text-white text-center'>
-              <img
-                className='card-img rounded'
-                src='https://naturallivingfamily.com/wp-content/uploads/2018/01/How-to-Use-Essential-Oils-for-Dogs-and-Other-Pets.jpg'
-                alt='Doggy'
-              ></img>
-              <div className='card-img-overlay d-flex flex-column justify-content-sm-between'>
-                <div className='my-4'>
-                  <h1 className='display-3 card-title text-center'>
-                    Give Them The Attention
-                  </h1>
-                  <h1 className='display-1 card-title text-center'>
-                    They Deserve
-                  </h1>
-                  <Link to='/artists' className='btn btn-lg btn-info'>
-                    Set An Appointment Today
-                  </Link>
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card text-white text-center">
+              <img className="card-img rounded" src="https://naturallivingfamily.com/wp-content/uploads/2018/01/How-to-Use-Essential-Oils-for-Dogs-and-Other-Pets.jpg" alt="Doggy"></img>
+              <div className="card-img-overlay d-flex flex-column justify-content-sm-between">
+                <div className="my-4">
+                  <h1 className="display-3 card-title text-center">Give Them The Attention</h1>
+                  <h1 className="display-1 card-title text-center">They Deserve</h1>
+                  <Link to='/artists' className='btn btn-block btn-lg btn-info' role="button">Set An Appointment Today</Link>
                 </div>
-                <div className='jumbotron text-dark'>
-                  <p className='lead'>
-                    This is a simple hero unit, a simple jumbotron-style
-                    component for calling extra attention to featured content or
-                    information.
-                  </p>
-                  <hr className='my-4'></hr>
-                  <p>
-                    It uses utility class for typography and spacing to space
-                    content out within the larger container.
-                  </p>
-                  <Link
-                    to='/pricing'
-                    className='btn btn-primary btn-lg'
-                    role='button'
-                  >
-                    Learn more
-                  </Link>
+                <div className="jumbotron text-dark">
+                  <p className="lead">We specialize in finding the perfect arist for your furry friends no matter the occassion</p>
+                  <p className="lead"><strong>Painters | Photographers | Film Makers</strong></p>
+                  <hr className="my-4"></hr>
+                  <p>Browse our collection, there's a unique style for anyone</p>
+                  <Link to='/artists' className="btn btn-primary btn-lg" role="button">Learn more</Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <br></br>
+
       </Breakpoint>
 
       <Container className='under-splash'>
         <Row>
           <Col size='md-12'>
-            <h1 className='display-2 text-dark text-center my-2'>
-              Paint A Good Boy
+            <h1 className='display-2 text-dark text-center my-2'><strong>
+              Paint A Good Boy</strong>
             </h1>
             <Breakpoint l only>
               <h1 className=' text-dark text-center'>Meet Our Artists</h1>
@@ -127,7 +109,12 @@ function Home() {
         </Container>
       </Breakpoint>
       <Breakpoint m only>
-        <BigText></BigText>
+        <br></br>
+        <div className="row">
+          <div className="col-md-12">
+              <InstructionArtist />
+          </div>
+        </div>
       </Breakpoint>
       <Breakpoint l only>
         <Footer />
@@ -135,5 +122,4 @@ function Home() {
     </>
   );
 }
-
 export default Home;

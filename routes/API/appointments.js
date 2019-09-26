@@ -60,5 +60,4 @@ router.post('/delete/:appointmentId', async (req, res, next) => {
     next(err);
   }
 });
-
 module.exports = router;

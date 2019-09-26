@@ -18,7 +18,6 @@ class Navbar extends React.Component {
   //   if(localStorage.getItem("jwtToken") === null) {
   //     console.log("testing navbar items");
   //     return (
-
   //   }
   // }
 
@@ -94,5 +93,4 @@ class Navbar extends React.Component {
     );
   }
 }
-
 export default Navbar;
