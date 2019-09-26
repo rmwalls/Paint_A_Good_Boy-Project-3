@@ -22,7 +22,7 @@ function ImageGallery() {
           <li data-target='#myCarousel' data-slide-to='1'></li>
           <li data-target='#myCarousel' data-slide-to='2'></li>
         </ol>
-
+        ​
         <div className='carousel-inner'>
           <div className='carousel-item active'>
             <ArtistCard></ArtistCard>
@@ -34,15 +34,7 @@ function ImageGallery() {
             <ArtistCard></ArtistCard>
           </div>
         </div>
-
-
-          <a className='carousel-control-prev' href='#myCarousel' data-slide='prev'>
-            <span className='carousel-control-prev-icon'></span>
-          </a>
-          <a className='carousel-control-next' href='#myCarousel' data-slide='next'>
-            <span className='carousel-control-next-icon'></span>
-          </a>
-        </div>
+        ​
         <a
           className='carousel-control-prev'
           href='#myCarousel'
@@ -58,7 +50,7 @@ function ImageGallery() {
           <span className='carousel-control-next-icon'></span>
         </a>
       </div>
-
+      ​
       <a className='carousel-control-prev' href='#myCarousel' data-slide='prev'>
         <span className='carousel-control-prev-icon'></span>
       </a>
@@ -69,4 +61,3 @@ function ImageGallery() {
   );
 }
 export default ImageGallery;
-

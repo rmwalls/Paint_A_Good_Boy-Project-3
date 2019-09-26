@@ -42,6 +42,11 @@ class Artists extends Component {
       })
       .then(res => console.log(res))
       .catch(err => console.log(err));
+
+    alert(
+      'Success! Appointment scheduled for: ' +
+        this.state.selectedDay.toLocaleDateString()
+    );
   }
 
   loadAllArtists = () => {
@@ -108,8 +113,8 @@ class Artists extends Component {
             </div>
           ))
         ) : (
-            <h3>No Results to Display</h3>
-          )}
+          <h3>No Results to Display</h3>
+        )}
         <Footer sticky-bottom='sticky-bottom' />
       </>
     );
