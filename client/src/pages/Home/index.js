@@ -34,9 +34,10 @@ function Home() {
                 </div>
               </Col>
               <div className='col-md-6 d-flex my-5'>
-                <button className='btn btn-block btn-lg btn-info'>
+                {/* <button className='btn btn-block btn-lg btn-info'>
                   Set An Appointment Today
-                </button>
+                </button> */}
+                <Link to='/artists' className='btn btn-block btn-lg btn-info' role="button">Set An Appointment Today</Link>
               </div>
             </Row>
           </Container>
