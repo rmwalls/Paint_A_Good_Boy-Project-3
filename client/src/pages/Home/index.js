@@ -7,7 +7,7 @@ import Col from '../../components/Col';
 //import Cal from '../../components/Cal'; this isn't being called
 import ImageGallery from '../../components/ImageGallery';
 import BigTile from '../../components/BigTile';
-import BigText from '../../components/BigText';
+//import BigText from '../../components/BigText';
 import InstructionUser from '../../components/InstructionUser';
 import InstructionArtist from '../../components/InstructionArtist';
 import CatImage from '../../kitty.jpg';

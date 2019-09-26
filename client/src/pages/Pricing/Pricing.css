@@ -5,16 +5,18 @@
     color: #796C6F;
     font-size: 18px;
   }
+
   #cf {
     position:relative;
-    height:281px;
-    width:450px;
+    height:80px;
+    width:160px;
     margin:0 auto;
   }
   
   #cf img {
     position:absolute;
-    left:0;
+    right:0;
+    align-content: right;
     -webkit-transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
     -o-transition: opacity 1s ease-in-out;
@@ -22,5 +24,24 @@
   }
   
   #cf img.top:hover {
+    opacity:0;
+  }
+  #cf2 {
+    position:relative;
+    height:120px;
+    width:266px;
+    margin:0 auto;
+  }
+
+  #cf2 img {
+    position:absolute;
+    align-content: right;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  #cf2 img.top:hover {
     opacity:0;
   }

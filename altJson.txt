@@ -1,0 +1,70 @@
+  {
+    "id": 9,
+    "image": "img/carolThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 10,
+    "image": "img/georgiaThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 11,
+    "image": "img/estherThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 12,
+    "image": "img/yvonneThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 13,
+    "image": "img/karaThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 14,
+    "image": "img/bernardThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 15,
+    "image": "img/camilleThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 16,
+    "image": "img/whitneyThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 17,
+    "image": "img/bertThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 18,
+    "image": "img/kenThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 19,
+    "image": "img/cliftonThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 20,
+    "image": "img/susieThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 21,
+    "image": "img/dennisThumb.jpg",
+    "clicked": false
+  },
+  {
+    "id": 22,
+    "image": "img/deborahThumb.jpg",
+    "clicked": false
+  }
