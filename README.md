@@ -20,13 +20,6 @@ Server Technology | Client Technoloty
 "nodemon": "^1.19.2"
 "passport": "^0.4.0"
 "passport-jwt": "^4.0.0"
-"react-image-lightbox": "^5.1.0"
-"react-router-dom": "^5.0.1"
-"react-scripts": "3.1.1"
-"react-socks": "^2.1.0"
-"react-transition-group": "^4.3.0"
-"styled-components": "^5.0.0-beta.8"
-"styled-components": "^5.0.0-beta.8-groupsizefix"
 
 ## What Is This Application For
 
