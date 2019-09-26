@@ -55,7 +55,7 @@ function Home() {
                   <Link to="/artists" className='btn btn-lg btn-info'>Set An Appointment Today</Link>
                 </div>
                 <div className="jumbotron text-dark">
-                  <p className="lead">We specialize in finding the perfect arist for your furry friends no matter the occassion</p>
+                  <p className="lead">We specialize in finding the perfect arist for your furry friends no matter the occasion</p>
                   <p className="lead"><strong>Painters | Photographers | Film Makers</strong></p>
                   <hr className="my-4"></hr>
                   <p>Browse our collection, there's a unique style for anyone</p>
