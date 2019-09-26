@@ -50,9 +50,9 @@ function Pricing() {
                         </ul>
                         <BigTile image="../../img/other/APPA_stats2.jpg" />
                         <div id="cf2">
-                    <img class="bottom" src="../../img/other/prints4.png" alt="paw prints" align="right" width="100%"></img>
-                    <img class="top" src="../../img/other/prints5.png" alt="paw prints" align="right" width="100%"></img>
-                </div>
+                            <img class="bottom" src="../../img/other/prints4.png" alt="paw prints" align="right" width="100%"></img>
+                            <img class="top" src="../../img/other/prints5.png" alt="paw prints" align="right" width="100%"></img>
+                        </div>
                     </Col>
                 </Row>
             </Container>
