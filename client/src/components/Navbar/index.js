@@ -57,19 +57,16 @@ class Navbar extends React.Component {
                 Artists
               </Link>
             </li>
-            {this.props.loggedIn ? (
-              <li className='nav-item' style={{ width: '150px' }}>
-                <Link to='/appointments' className='nav-link text-light'>
-                  Appointments
-                </Link>
-              </li>
-            ) : (
-              <li className='nav-item' style={{ width: '150px' }}>
-                <Link to='/pricing' className='nav-link text-light'>
-                  Pricing
-                </Link>
-              </li>
-            )}
+            <li className='nav-item' style={{ width: '150px' }}>
+              <Link to='/appointments' className='nav-link text-light'>
+                Appointments
+              </Link>
+            </li>
+            <li className='nav-item' style={{ width: '150px' }}>
+              <Link to='/pricing' className='nav-link text-light'>
+                Pricing
+              </Link>
+            </li>
             {this.props.loggedIn ? (
               <li className='nav-item' style={{ width: '150px' }}>
                 <Link

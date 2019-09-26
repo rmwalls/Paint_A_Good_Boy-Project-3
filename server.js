@@ -11,14 +11,6 @@ app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.use("/api", (req, res, next) => {
-//   // CHECK TOKEN
-//   if(!req.body.token) {
-//     res.status(401).end();
-//   }
-//   return next();
-// })
-
 // Connect to the Mongo DB
 const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/petapp';
 console.log('Connecting to db...');
@@ -57,6 +49,6 @@ app.use('/api/users', require('./routes/API/users.js'));
 app.use('/api/appointments', require('./routes/API/appointments.js'));
 
 // Start the API server
-app.listen(PORT, function () {
+app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
