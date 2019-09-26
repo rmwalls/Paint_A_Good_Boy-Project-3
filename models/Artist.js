@@ -30,7 +30,12 @@ const ArtistSchema = new Schema({
   media: [String],
   artistPhoto: String,
   bioInfo: String,
-  appointments: [Date],
+  appointments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Appointment'
+    }
+  ],
   userCreated: {
     type: Date,
     default: Date.now

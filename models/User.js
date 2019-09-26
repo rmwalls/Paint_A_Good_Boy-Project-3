@@ -32,8 +32,8 @@ const UserSchema = new Schema({
   },
   appointments: [
     {
-      artist: String,
-      date: String
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Appointment'
     }
   ]
 });

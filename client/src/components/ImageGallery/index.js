@@ -1,65 +1,122 @@
 //This component displays items in a carousel, currently used for artist headshots
-import React from "react";
+import React, { Component } from 'react';
 //import Col from "../Col"; not being called
-import ArtistCard from "../ArtistCard"
-import "./style.css";
+import ArtistCard from '../ArtistCard';
+import data from '../../artists.json';
+import './style.css';
 
-function ImageGallery() {
-  return (
-    <div className='bs-example'>
-      <div id='myCarousel' className='carousel slide' data-ride='carousel'>
-        <ol className='carousel-indicators'>
-          <li data-target='#myCarousel' data-slide-to='0' className='active'></li>
-          <li data-target='#myCarousel' data-slide-to='1'></li>
-          <li data-target='#myCarousel' data-slide-to='2'></li>
-        </ol>
+class ImageGallery extends Component {
+  state = {
+    data,
+    // data1,
+    // data2,
+    // data3,
+    clickedIds: []
+  };
 
-        <div id="myCarousel" className="carousel slide" data-ride="carousel">
+  componentDidMount() {
+    console.log(data);
+    this.setState({
+      data: data,
+      clickedIds: []
+    });
 
-          <ol className="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
+    // this.sliceArray1();
+    // this.sliceArray2();
+    // this.sliceArray3();
+  }
+
+  // sliceArray1 = () => {
+  //   data.slice(0, 7);
+  //   return this.state.data1;
+  // };
+
+  // sliceArray2 = () => {
+  //   data.slice(8, 15);
+  //   return this.state.data2;
+  // };
+
+  // sliceArray3 = () => {
+  //   data.slice(16);
+  //   return this.state.data3;
+  // };
+
+  handleButtonClicks = id => {
+    let clickedIds = this.state.clickedIds;
+    //write code to go to page for artist clicked
+  };
+
+  render() {
+    return (
+      <div className='bs-example'>
+        <div id='myCarousel' className='carousel slide' data-ride='carousel'>
+          <ol className='carousel-indicators'>
+            <li
+              data-target='#myCarousel'
+              data-slide-to='0'
+              className='active'
+            ></li>
+            <li data-target='#myCarousel' data-slide-to='1'></li>
+            <li data-target='#myCarousel' data-slide-to='2'></li>
           </ol>
 
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <ArtistCard></ArtistCard>
+          <div id='myCarousel' className='carousel slide' data-ride='carousel'>
+            <ol className='carousel-indicators'>
+              <li
+                data-target='#myCarousel'
+                data-slide-to='0'
+                className='active'
+              ></li>
+              <li data-target='#myCarousel' data-slide-to='1'></li>
+              <li data-target='#myCarousel' data-slide-to='2'></li>
+            </ol>
+
+            <div className='carousel-inner'>
+              <div className='carousel-item active'>
+                <ArtistCard artists={this.state.data}></ArtistCard>
+              </div>
+              <div className='carousel-item'>
+                <ArtistCard artists={this.state.data}></ArtistCard>
+              </div>
+              <div className='carousel-item'>
+                <ArtistCard artists={this.state.data}></ArtistCard>
+              </div>
             </div>
-            <div className="carousel-item">
-              <ArtistCard></ArtistCard>
-            </div>
-            <div className="carousel-item">
-              <ArtistCard></ArtistCard>
-            </div>
+
+            <a
+              className='carousel-control-prev'
+              href='#myCarousel'
+              data-slide='prev'
+            >
+              <span className='carousel-control-prev-icon'></span>
+            </a>
+            <a
+              className='carousel-control-next'
+              href='#myCarousel'
+              data-slide='next'
+            >
+              <span className='carousel-control-next-icon'></span>
+            </a>
           </div>
 
-        <a className='carousel-control-prev' href='#myCarousel' data-slide='prev'>
-          <span className='carousel-control-prev-icon'></span>
-        </a>
-        <a className='carousel-control-next' href='#myCarousel' data-slide='next'>
-          <span className='carousel-control-next-icon'></span>
-        </a>
-
+          <a
+            className='carousel-control-prev'
+            href='#myCarousel'
+            data-slide='prev'
+          >
+            <span className='carousel-control-prev-icon'></span>
+          </a>
+          <a
+            className='carousel-control-next'
+            href='#myCarousel'
+            data-slide='next'
+          >
+            <span className='carousel-control-next-icon'></span>
+          </a>
+        </div>
       </div>
-
-      <a
-        className='carousel-control-prev'
-        href='#myCarousel'
-        data-slide='prev'
-      >
-        <span className='carousel-control-prev-icon'></span>
-      </a>
-      <a
-        className='carousel-control-next'
-        href='#myCarousel'
-        data-slide='next'
-      >
-        <span className='carousel-control-next-icon'></span>
-      </a>
-    </div>
-  </div>
-  );
+    );
+  }
 }
 
 export default ImageGallery;

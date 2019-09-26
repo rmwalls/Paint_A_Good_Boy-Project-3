@@ -1,12 +1,18 @@
-var mongoose = require('mongoose');
-var passport = require('passport');
-var settings = require('../../config/settings');
+// ----- REQUIRE EXPRESS AND PASSPORT ----- //
+const passport = require('passport');
+const settings = require('../../config/settings');
 require('../../config/passport')(passport);
-var express = require('express');
-var jwt = require('jsonwebtoken');
-var router = express.Router();
-var User = require('../../models/User');
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const router = express.Router();
 
+// ----- REQUIRE MODELS ----- //
+const User = require('../../models/User');
+const Appointment = require('../../models/Appointment');
+
+// @route    POST api/users/register
+// @desc     Register and create a new user
+// @access   Public
 router.post('/register', function(req, res) {
   if (!req.body.email || !req.body.password) {
     res.json({
@@ -14,7 +20,7 @@ router.post('/register', function(req, res) {
       msg: 'Please include a email and password.'
     });
   } else {
-    var newUser = new User({
+    const newUser = new User({
       email: req.body.email,
       password: req.body.password
     });
@@ -45,6 +51,9 @@ router.post('/register', function(req, res) {
   }
 });
 
+// @route    POST api/users/login
+// @desc     login
+// @access   Public
 router.post('/login', function(req, res) {
   User.findOne(
     {
@@ -82,6 +91,46 @@ router.post('/login', function(req, res) {
       }
     }
   );
+});
+
+// @route    GET api/users/:userId/appointments
+// @desc     Get the user's appointments
+// @access   Private
+router.get('/:userId/appointments', async (req, res, next) => {
+  try {
+    const { userId } = req.params;
+    const user = await User.findById(userId).populate('appointments');
+    console.log('user', user);
+    res.status(200).json(user.appointments);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+});
+
+// @route    POST api/users/:userId/appointments
+// @desc     Create a new appointment and save to User
+// @access   Private
+router.post('/:userId/appointments', async (req, res, next) => {
+  try {
+    const { userId } = req.params;
+    // create a new appointment
+    const newAppointment = new Appointment(req.body);
+    // Get user
+    const user = await User.findById(userId);
+    // Assign user to the appointment
+    newAppointment.user = user;
+    // Save the new appointment
+    await newAppointment.save();
+    // Add appointment to the user's appointment array
+    user.appointments.push(newAppointment);
+    // Save the user
+    await user.save();
+    res.status(201).json();
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
 });
 
 module.exports = router;

@@ -1,8 +1,8 @@
+// ----- REQUIRE EXPRESS ----- //
 const express = require('express');
 const router = express.Router();
 
-const User = require('../../models/User');
-const Artist = require('../../models/Artist');
+// ----- REQUIRE MODELS ----- //
 const Appointment = require('../../models/Appointment');
 
 // @route    POST api/appointments
@@ -17,11 +17,6 @@ router.post('/', async (req, res) => {
     date
   }).catch(err => console.error(err));
 
-  // const newAppointment = new Appointment({
-  //   user: req.user._id,
-  //   artist: req.artist._id,
-  //   date: req.body.date
-
   newAppointment.save((err, appointment) => {
     if (err) {
       return res.status(500).json({
@@ -33,22 +28,37 @@ router.post('/', async (req, res) => {
   });
 });
 
-// @route   GET api/appointments/:id
-// @desc    Get a set appointment by id
-// @access  Private
-router.get('/:id', (req, res) => {
-  Appointment.findById({ id: _id }, (err, appointment) => {
-    if (err) throw err;
-    res.send(appointment);
-  });
+// @route    GET api/appointments/:userId
+// @desc     Get an appointment by User and populate Artist fields
+// @access   Private
+router.get('/:userId', async (req, res, next) => {
+  try {
+    const { userId } = req.params;
+    const appointment = await Appointment.find({ user: userId }).populate(
+      'artist'
+    );
+    // console.log('appointment', appointment);
+    res.status(200).json(appointment);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
 });
 
-// Get appointments by User
-router.get('/:userId', (req, res) => {
-  const userId = req.params.userId;
-  Appointment.findAll({ id: userId }).then(appointment => {
-    res.json(appointment).catch(err => console.log(err));
-  });
+// @route    POST api/appointments/delete/:appointmentId
+// @desc     Remove an appointment by id
+// @access   Private
+router.post('/delete/:appointmentId', async (req, res, next) => {
+  try {
+    const { appointmentId } = req.params;
+    const appointment = await Appointment.findByIdAndRemove({
+      _id: appointmentId
+    });
+    res.status(200).json(appointment);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
 });
 
 module.exports = router;

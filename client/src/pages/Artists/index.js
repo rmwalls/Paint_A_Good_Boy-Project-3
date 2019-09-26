@@ -1,23 +1,36 @@
 import React, { Component } from 'react';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import 'react-day-picker/lib/style.css';
 import ArtistCardFull from '../../components/ArtistCardFull';
 import axios from 'axios';
 import Footer from '../../components/Footer';
 
 class Artists extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       artists: [],
-      // career: '',
       userId: localStorage.getItem('userId'),
-      artistId: '',
-      selectedDate: 'today'
+      selectedDay: null,
+      isEmpty: true,
+      isDisabled: false
     };
+
     this.selectArtist = this.selectArtist.bind(this);
+    this.handleDayChange = this.handleDayChange.bind(this);
   }
 
   componentDidMount() {
     this.loadAllArtists();
+  }
+
+  handleDayChange(selectedDay, modifiers, dayPickerInput) {
+    const input = dayPickerInput.getInput();
+    this.setState({
+      selectedDay,
+      isEmpty: !input.value.trim(),
+      isDisabled: modifiers.disabled === true
+    });
   }
 
   selectArtist(id) {
@@ -25,27 +38,11 @@ class Artists extends Component {
       .post('/api/appointments', {
         artist: id,
         user: this.state.userId,
-        date: this.state.selectedDate
+        date: this.state.selectedDay
       })
       .then(res => console.log(res))
       .catch(err => console.log(err));
-    // axios.get(`/api/artists/${id}`).then(res => {
-    //   console.log('selected artist: ' + res.data.name);
-    //   let thisUser = this.state.userId;
-    //   let appointment = {
-    //     artist: res.data.name,
-    //     date: this.state.selectedDate
-    //   };
-    //   axios
-    //     .post(`/api/users/appointments/${thisUser}`, appointment)
-    //     .then(res => console.log(res))
-    //     .catch(err => console.log(err));
-    // });
   }
-
-  // setCareer = career => {
-  //   this.setState({ career: career }, this.loadArtistsByCareer);
-  // };
 
   loadAllArtists = () => {
     axios
@@ -54,14 +51,8 @@ class Artists extends Component {
       .catch(err => console.log(err));
   };
 
-  // loadArtistsByCareer = () => {
-  //   axios
-  //     .get(`/api/artists/${this.state.career.value}`)
-  //     .then(res => console.log(res) || this.setState({ artists: res.data }))
-  //     .catch(err => console.log(err));
-  // };
-
   render() {
+    const { selectedDay, isDisabled, isEmpty } = this.state;
     return (
       <>
         {/*The br's are to push the content below the navbar*/}
@@ -78,7 +69,7 @@ class Artists extends Component {
           this.state.artists.map(artist => (
             <div className='container'>
               <div className='row'>
-                <div className='col-md-12'>
+                <div className='col-md-10'>
                   <ArtistCardFull
                     key={artist._id}
                     name={artist.name}
@@ -86,9 +77,30 @@ class Artists extends Component {
                     year={artist.career}
                     pic={artist.artistPhoto}
                     media={artist.media}
+                    buttonText='Meet With This Artist'
                     onClick={e => {
                       e.preventDefault();
                       this.selectArtist(artist._id);
+                    }}
+                  />
+                </div>
+                <div className='col-md-2'>
+                  <p>
+                    {isEmpty && 'Please type or pick a day'}
+                    {!isEmpty && !selectedDay && 'This day is invalid'}
+                    {selectedDay && isDisabled && 'This day is disabled'}
+                    {selectedDay &&
+                      !isDisabled &&
+                      `You chose ${selectedDay.toLocaleDateString()}`}
+                  </p>
+                  <DayPickerInput
+                    value={selectedDay}
+                    onDayChange={this.handleDayChange}
+                    dayPickerProps={{
+                      selectedDays: selectedDay,
+                      disabledDays: {
+                        daysOfWeek: [0, 6]
+                      }
                     }}
                   />
                 </div>
