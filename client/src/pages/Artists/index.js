@@ -4,6 +4,8 @@ import 'react-day-picker/lib/style.css';
 import ArtistCardFull from '../../components/ArtistCardFull';
 import axios from 'axios';
 import Footer from '../../components/Footer';
+import './style.css';
+
 
 class Artists extends Component {
   constructor(props) {
@@ -82,6 +84,7 @@ class Artists extends Component {
                     year={artist.career}
                     pic={artist.artistPhoto}
                     media={artist.media}
+                    buttonState="d-none"
                     buttonText='Meet With This Artist'
                     onClick={e => {
                       e.preventDefault();
@@ -108,6 +111,10 @@ class Artists extends Component {
                       }
                     }}
                   />
+                  <button className='btn btn-primary btn-sm mt-1' onClick={e => {
+                      e.preventDefault();
+                      this.selectArtist(artist._id);
+                    }}>Meet With This Artist</button>
                 </div>
               </div>
             </div>

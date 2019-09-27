@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './style.css';
 import logo from './logo.png';
 
+
 class Navbar extends React.Component {
   // state = {
   //   logInChage: false;
@@ -57,7 +58,7 @@ class Navbar extends React.Component {
                 Artists
               </Link>
             </li>
-            <li className='nav-item' style={{ width: '150px' }}>
+            <li className='nav-item' style={{ width: '190px' }}>
               <Link to='/appointments' className='nav-link text-light'>
                 Appointments
               </Link>

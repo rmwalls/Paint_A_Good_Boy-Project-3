@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ArtistCardFull from '../../components/ArtistCardFull';
 import axios from 'axios';
 import Footer from '../../components/Footer';
+import './Appointments.css';
 
 class Appointments extends Component {
   constructor() {
