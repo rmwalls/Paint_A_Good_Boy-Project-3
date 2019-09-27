@@ -24,7 +24,7 @@ function ArtistCardFull(props) {
             <p className='card-text'>{props.cardText}</p>
             <div className='d-inline-flex'>
               <button
-                className='btn btn-primary btn-sm mr-1'
+                className={`${props.buttonState} btn btn-primary btn-sm mr-1`}
                 onClick={props.onClick}
               >
                 {props.buttonText}
