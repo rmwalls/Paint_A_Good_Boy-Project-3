@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ArtistCardFull from '../../components/ArtistCardFull';
+import toaster from 'toasted-notes';
+import 'toasted-notes/src/styles.css';
 import axios from 'axios';
 import Footer from '../../components/Footer';
 import './Appointments.css';
@@ -22,12 +24,12 @@ class Appointments extends Component {
       .post(`/api/appointments/delete/${id}`, {
         appointment: id
       })
-      .then(res => console.log(res))
+      .then(res => this.setState({ appointments: res.data }))
       .catch(err => console.log(err));
-
-    alert('Appointment removed!');
-
-    window.location.reload();
+    this.loadAppointments();
+    toaster.notify(<h4>Appointment cancelled!</h4>, {
+      duration: 2000
+    });
   }
 
   loadAppointments = () => {
@@ -64,7 +66,7 @@ class Appointments extends Component {
                     pic={appointment.artist.artistPhoto}
                     media={appointment.artist.media}
                     cardText={'Appointment scheduled for: ' + appointment.date}
-                    buttonText='Remove Appointment'
+                    buttonText='Cancel Appointment'
                     onClick={e => {
                       e.preventDefault();
                       this.removeAppointment(appointment._id);
