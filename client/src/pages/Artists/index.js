@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
+import toaster from 'toasted-notes';
+import 'toasted-notes/src/styles.css';
 import ArtistCardFull from '../../components/ArtistCardFull';
 import axios from 'axios';
 import Footer from '../../components/Footer';
 import './style.css';
-
 
 class Artists extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Artists extends Component {
     this.state = {
       artists: [],
       userId: localStorage.getItem('userId'),
-      selectedDay: null,
+      selectedDay: '',
       isEmpty: true,
       isDisabled: false
     };
@@ -45,9 +46,14 @@ class Artists extends Component {
       .then(res => console.log(res))
       .catch(err => console.log(err));
 
-    alert(
-      'Success! Appointment scheduled for: ' +
-        this.state.selectedDay.toLocaleDateString()
+    toaster.notify(
+      <h4>
+        Appointment confirmed for:
+        <h3>{this.state.selectedDay.toLocaleDateString()}</h3>
+      </h4>,
+      {
+        duration: 2000
+      }
     );
   }
 
@@ -84,12 +90,8 @@ class Artists extends Component {
                     year={artist.career}
                     pic={artist.artistPhoto}
                     media={artist.media}
-                    buttonState="d-none"
+                    buttonState='d-none'
                     buttonText='Meet With This Artist'
-                    onClick={e => {
-                      e.preventDefault();
-                      this.selectArtist(artist._id);
-                    }}
                   />
                 </div>
                 <div className='col-md-2'>
@@ -111,10 +113,15 @@ class Artists extends Component {
                       }
                     }}
                   />
-                  <button className='btn btn-primary btn-sm mt-1' onClick={e => {
+                  <button
+                    className='btn btn-primary btn-sm mt-1'
+                    onClick={e => {
                       e.preventDefault();
                       this.selectArtist(artist._id);
-                    }}>Meet With This Artist</button>
+                    }}
+                  >
+                    Meet With This Artist
+                  </button>
                 </div>
               </div>
             </div>
