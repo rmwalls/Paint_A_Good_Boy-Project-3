@@ -4,7 +4,7 @@
 * Deployed to Heroku --> <https://paint-a-good-boy.herokuapp.com/>
 * Project Team --> Lucas Martins, Mike McGuire, Stephen Rogers, Robbi Walls
 
-Server Technology | Client Technoloty
+Server Technology | Client Technology
 --------------|-----------------
 "axios": "^0.19.0" | "react": "^16.9.0"
 "bcrypt-nodejs": "0.0.3" | "react-calendar"" "^2.19.2"
